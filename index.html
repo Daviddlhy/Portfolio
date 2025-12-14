@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dellytix - Freelance en Data</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,16 +14,15 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-chart-line"></i>
-                <span>Dellytix </span>
+                <span>Dellytix</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
+                <li><a href="#services">Solutions</a></li>
+                <li><a href="#stack">Stack</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,132 +30,287 @@
         </div>
     </nav>
 
-    <!-- Section Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Freelance Data Engineer & Analytics Engineer</h1>
-                <h2>Votre donnée mérite mieux que des scripts jetables.</h2>
-                <p>Spécialisé en Azure, Snowflake, CI/CD et orchestration, j’aide les entreprises à concevoir, fiabiliser et automatiser leurs pipelines de données.
-                    Je travaille à l’intersection entre l’ingénierie data, la gouvernance (Datagalaxy) et la BI (MicroStrategy, R Shiny), pour transformer les données en leviers opérationnels.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Démarrer un projet</a>
-                    <a href="#projets" class="btn btn-secondary">Voir mes réalisations</a>
+    <main>
+        <!-- Hero -->
+        <section id="accueil" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Freelance Data & Analytics Engineering</p>
+                    <h1>Je conçois des plateformes data fiables et orientées métier.</h1>
+                    <p class="intro">J’accompagne les scale-ups et les directions data à industrialiser leur patrimoine : ingestion cloud, gouvernance, qualité, BI et automation. Une approche produit, des pipelines audités et un langage commun entre tech et business.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Planifier un call</a>
+                        <a href="#services" class="btn btn-secondary">Voir les solutions</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <div class="profile-badge">
+                        <img src="assets/profile.jpeg" alt="David Delhaye" loading="lazy">
+                        <div>
+                            <p class="badge-label">Dellytix</p>
+                            <p class="badge-title">Data Engineer indépendant</p>
+                        </div>
+                    </div>
+                    <ul class="badge-list">
+                        <li><i class="fas fa-check"></i> Pipelines Azure & Snowflake certifiés</li>
+                        <li><i class="fas fa-check"></i> Catalogage & data lineage Datagalaxy</li>
+                        <li><i class="fas fa-check"></i> BI Ops (MicroStrategy, R/Shiny)</li>
+                        <li><i class="fas fa-check"></i> Culture produit & rituels agiles</li>
+                    </ul>
+                    <a class="badge-link" href="https://www.linkedin.com/in/d-delhaye" target="_blank" rel="noopener noreferrer">
+                        Voir LinkedIn <i class="fas fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="assets/profile.jpeg" alt="Photo de profil" class="hero-photo" loading="lazy">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Services -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Mes Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Analyse de Données</h3>
-                    <p>Exploration, nettoyage et analyse approfondie de vos données pour identifier des tendances et opportunités.</p>
+        <!-- Studio -->
+        <section class="studio">
+            <div class="container studio-grid">
+                <div class="studio-details">
+                    <p class="eyebrow">Sur le terrain</p>
+                    <h2>Je construis vos assets data depuis vos locaux ou à distance.</h2>
+                    <p>Workshops d’architecture, pair-programming, évangélisation métier : je prends part à vos rituels pour garder vos équipes alignées et autonomes.</p>
+                    <ul>
+                        <li>Présence hybride Paris & remote</li>
+                        <li>Ateliers blueprint et coaching équipes</li>
+                        <li>Documentation produit et vidéo récap</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <p>Développement de modèles prédictifs et de systèmes d'intelligence artificielle sur mesure.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>BI & Visualisation</h3>
-                    <p><i> Des dashboards qui parlent métier.<br>
-                        Je crée des rapports interactifs et lisibles avec MicroStrategy, connectés à vos sources cloud. </i></p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Data Engineering</h3>
-                    <p>Conception et mise en place de pipelines de données robustes et évolutifs.</p>
+                <div class="studio-image">
+                    <img src="assets/profile.jpeg" alt="David Delhaye en mission" loading="lazy">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Compétences -->
-    <section id="competences" class="skills">
-        <div class="container">
-            <h2 class="section-title">Compétences Techniques</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Langages de Programmation</h3>
-                    <div class="skills-tags">
-                        <span class="skills-tag">Python</span>
-                        <span class="skills-tag">R</span>
-                        <span class="skills-tag">SQL</span>
-                    </div>
+        <!-- Solutions -->
+        <section id="services" class="solutions">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Offres modulaires</p>
+                    <h2>Des briques data conçues pour livrer vite et bien</h2>
+                    <p>Je mobilise un socle commun (CI/CD, observabilité, QA) et j’assemble vos features à la carte.</p>
                 </div>
-                <div class="skills-category">
-                    <h3>Outils & Technologies</h3>
-                    <div class="skills-tags">
-                        <span class="skills-tag">TensorFlow</span>
-                        <span class="skills-tag">Power BI</span>
-                        <span class="skills-tag">Apache Spark</span>
+                <div class="solutions-grid">
+                    <article class="solution-card">
+                        <div class="solution-icon"><i class="fas fa-diagram-project"></i></div>
+                        <h3>Blueprint Plateforme</h3>
+                        <p>Architecture cible, gouvernance, roadmap et backlog technique détaillé pour lancer votre data factory.</p>
+                        <ul>
+                            <li>Audit Maturity & risques</li>
+                            <li>Schémas d’architecture</li>
+                            <li>Plan d’implémentation SMQ</li>
+                        </ul>
+                    </article>
+                    <article class="solution-card">
+                        <div class="solution-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3>Data Engineering Ops</h3>
+                        <p>Ingestion, orchestration, monitoring et tests pour fiabiliser votre pipeline de bout en bout.</p>
+                        <ul>
+                            <li>dbt, Airflow, Synapse</li>
+                            <li>Qualité & alerting</li>
+                            <li>FinOps & SLA</li>
+                        </ul>
+                    </article>
+                    <article class="solution-card">
+                        <div class="solution-icon"><i class="fas fa-table"></i></div>
+                        <h3>Analytics Engineering</h3>
+                        <p>Modèles métiers, métriques fiables et dashboards prêts pour les décideurs.</p>
+                        <ul>
+                            <li>dbt metrics layer</li>
+                            <li>BI (MicroStrategy, Power BI)</li>
+                            <li>Data storytelling</li>
+                        </ul>
+                    </article>
+                    <article class="solution-card">
+                        <div class="solution-icon"><i class="fas fa-shield"></i></div>
+                        <h3>Gouvernance & conformité</h3>
+                        <p>Catalogage, data lineage, rôles et politiques pour un patrimoine exploitable et auditable.</p>
+                        <ul>
+                            <li>Datagalaxy / Purview</li>
+                            <li>Playbooks RGPD</li>
+                            <li>Data contracts</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="method">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Méthode</p>
+                    <h2>Un cadre clair, de l’audit au run</h2>
+                </div>
+                <div class="timeline">
+                    <div class="step">
+                        <span class="step-number">01</span>
+                        <h3>Diagnostic express</h3>
+                        <p>Interviews, audit infra & data contracts, cartographie des quick wins et risques critiques.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">02</span>
+                        <h3>Blueprint & backlog</h3>
+                        <p>Architecture cible, backlog priorisé et engagements de service pour aligner tech, métier et finance.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">03</span>
+                        <h3>Sprints & transfert</h3>
+                        <p>Mise en production incrémentale, runbooks, formation des équipes internes et instrumentation.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Projets -->
-    <section id="projets" class="projects">
-        <div class="container">
-            <h2 class="section-title">Mes Projets</h2>
-            <div class="projects-announcement">
-                <div class="announcement-icon">
-                    <i class="fas fa-hammer"></i>
+        <!-- Expériences -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Expériences</p>
+                    <h2>6 ans à faire parler la donnée pour des acteurs exigeants</h2>
+                    <p>Retail, énergie, télécoms : j’accompagne les équipes métier et data à industrialiser, gouverner et valoriser leurs plateformes.</p>
                 </div>
-                <h3>Des projets arrivent bientôt</h3>
-                <p>
-                    Je prépare actuellement une nouvelle sélection de projets. Revenez bientôt pour découvrir des études de cas concrètes,
-                    des architectures cloud élégantes et des pipelines data robustes.
-                </p>
-                <a class="btn btn-secondary" href="#contact">Être averti</a>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <header>
+                            <span class="xp-company">Franprix · Ivry-sur-Seine</span>
+                            <span class="xp-period">Nov. 2023 — Aujourd’hui</span>
+                        </header>
+                        <h3>Data Engineer</h3>
+                        <p>Industrialisation de la chaîne data (CI/CD, gouvernance, BI) pour fiabiliser les usages métiers.</p>
+                        <ul>
+                            <li>Pipelines CI/CD GitLab & Azure DevOps</li>
+                            <li>Modélisation Snowflake et tableaux MicroStrategy</li>
+                            <li>Automatisation Data Gouvernance (Datagalaxy)</li>
+                            <li>Accompagnement data driven auprès des métiers</li>
+                            <li>Stack : Python, GitLab, Linux, Docker, Azure DevOps</li>
+                        </ul>
+                    </article>
+                    <article class="experience-card">
+                        <header>
+                            <span class="xp-company">Orange Business Services</span>
+                            <span class="xp-period">Juin 2022 — Oct. 2023</span>
+                        </header>
+                        <h3>Consultant Confirmé Data Scientist</h3>
+                        <p>Mission EDF – CSC Datascience & IA : dashboards, ETL Spark et recalibration des modèles marketing.</p>
+                        <ul>
+                            <li>Développement d’applications et dashboards R Shiny</li>
+                            <li>ETL PySpark / SparkR pour alimenter les rapports</li>
+                            <li>Optimisation d’un modèle de scoring</li>
+                            <li>Modules Python réutilisables pour industrialiser les traitements</li>
+                            <li>Stack : R, Docker, SQL, Oracle, Spark, GitLab</li>
+                        </ul>
+                    </article>
+                    <article class="experience-card">
+                        <header>
+                            <span class="xp-company">Iliad / Free · Paris</span>
+                            <span class="xp-period">Nov. 2019 — Juin 2022</span>
+                        </header>
+                        <h3>Data Scientist</h3>
+                        <p>Automatisation de reporting réseau et alimentation des modèles Tableau à partir d’ETL maison.</p>
+                        <ul>
+                            <li>ETL MySQL pour tables analytics</li>
+                            <li>Automatisation des rapports CDT & direction</li>
+                            <li>Mentoring Python & R, participation aux recrutements</li>
+                            <li>Stack : Linux, GitLab, Python, R, MySQL, Tableau</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contactez-moi</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Prêt à transformer vos données ?</h3>
-                    <p>Discutons de votre projet et voyons comment je peux vous aider à atteindre vos objectifs.</p>
+        <!-- Stack -->
+        <section id="stack" class="stack">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Stack de prédilection</p>
+                    <h2>Cloud, data et BI que j’assemble chaque semaine</h2>
+                </div>
+                <div class="stack-grid">
+                    <article class="stack-block">
+                        <h3>Cloud & orchestration</h3>
+                        <div class="tags">
+                            <span>Azure</span>
+                            <span>Snowflake</span>
+                            <span>Synapse</span>
+                            <span>Airflow</span>
+                            <span>Azure DevOps</span>
+                        </div>
+                    </article>
+                    <article class="stack-block">
+                        <h3>Data engineering</h3>
+                        <div class="tags">
+                            <span>dbt</span>
+                            <span>Databricks</span>
+                            <span>Great Expectations</span>
+                            <span>Kafka</span>
+                            <span>Terraform</span>
+                        </div>
+                    </article>
+                    <article class="stack-block">
+                        <h3>Analytics & BI</h3>
+                        <div class="tags">
+                            <span>MicroStrategy</span>
+                            <span>Power BI</span>
+                            <span>Looker</span>
+                            <span>R Shiny</span>
+                            <span>Metabase</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container contact-grid">
+                <div class="contact-card">
+                    <p class="eyebrow">Travaillons ensemble</p>
+                    <h2>Décrivez votre enjeu data, je reviens vers vous sous 24h.</h2>
+                    <p>Mission flash, renfort d’équipe ou accompagnement long terme : tout commence par une session de cadrage.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>david.ddelhaye@gmail.com</span>
+                            <div>
+                                <p>Email</p>
+                                <a href="mailto:david.ddelhaye@gmail.com">david.ddelhaye@gmail.com</a>
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+33 6 XX XX XX XX</span>
+                            <div>
+                                <p>Téléphone</p>
+                                <a href="tel:+33600000000">+33 6 XX XX XX XX</a>
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/d-delhaye" target="_blank" rel="noopener noreferrer">Dellytix </a>
+                            <div>
+                                <p>LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/d-delhaye" target="_blank" rel="noopener noreferrer">@Dellytix</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <form class="contact-form" aria-label="Envoyer un message">
+                    <label>
+                        Nom / société
+                        <input type="text" name="name" placeholder="Votre nom" required>
+                    </label>
+                    <label>
+                        Email professionnel
+                        <input type="email" name="email" placeholder="prenom@entreprise.com" required>
+                    </label>
+                    <label>
+                        Enjeu principal
+                        <textarea name="message" rows="4" placeholder="Ex: migration vers Snowflake, fiabilisation pipelines, dashboard exécutif..." required></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary">Envoyer (demo)</button>
+                </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -164,9 +318,9 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <i class="fas fa-chart-line"></i>
-                    <span>DelTech Data </span>
+                    <span>Dellytix</span>
                 </div>
-                <p>&copy; 2025 Dellytix. Tous droits réservés.</p>
+                <p>&copy; 2025 Dellytix. Indépendant basé à Paris.</p>
             </div>
         </div>
     </footer>
