@@ -50,7 +50,11 @@ export default {
             });
         }
 
-        const cacheControl = url.pathname === "/" || url.pathname === "/index.html"
+        const isMutableAsset = url.pathname === "/"
+            || url.pathname === "/index.html"
+            || asset.type.startsWith("text/css")
+            || asset.type.startsWith("text/javascript");
+        const cacheControl = isMutableAsset
             ? "public, max-age=0, must-revalidate"
             : "public, max-age=86400";
 
