@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "lint": "node --check script.js && node --check data/profile.js && node --check scripts/build.mjs",
+    "check": "node scripts/validate.mjs",
     "build": "node scripts/build.mjs"
   }
 }

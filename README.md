@@ -1,28 +1,29 @@
 # Portfolio — David Delhaye
 
-Proposition de portfolio responsive pour David Delhaye, Data Engineer en
-Île-de-France.
+Portfolio professionnel responsive de David Delhaye, Data Engineer en
+Île-de-France. Le contenu est extrait de `CV_DELHAYE.pdf` et centralisé dans
+`data/profile.js`.
 
-Le contenu professionnel reprend les informations de `CV_DELHAYE.pdf` :
-
-- profil et spécialisations ;
-- expériences chez Franprix, Orange Business Services / EDF et Iliad / Free ;
-- stack technique et domaines data ;
-- diplômes, coordonnées et profil LinkedIn.
-
-## Aperçu local
+## Lancer le site
 
 ```bash
-python3 -m http.server 8000
+npm run dev
 ```
 
-Puis ouvrir `http://localhost:8000`.
+Puis ouvrir [http://localhost:8000](http://localhost:8000).
 
-## Build
+## Vérifier et construire
 
 ```bash
+npm run lint
+npm run check
 npm run build
 ```
 
-Le build produit un Worker compatible avec l’hébergement du projet dans
-`dist/server/index.js`.
+Le build génère un Worker compatible avec l’hébergement configuré dans
+`.openai/hosting.json`, sous `dist/server/index.js`.
+
+## Contenu à compléter
+
+Le CV ne fournit pas encore de projets détaillés, de certifications ni de lien
+GitHub. Le site le signale explicitement et n’invente aucune réalisation.

@@ -10,8 +10,10 @@ const sourceAssets = [
     { route: "/index.html", file: "index.html", type: "text/html; charset=utf-8" },
     { route: "/styles.css", file: "styles.css", type: "text/css; charset=utf-8" },
     { route: "/script.js", file: "script.js", type: "text/javascript; charset=utf-8" },
+    { route: "/data/profile.js", file: "data/profile.js", type: "text/javascript; charset=utf-8" },
     { route: "/CV_DELHAYE.pdf", file: "CV_DELHAYE.pdf", type: "application/pdf" },
-    { route: "/og-editorial-blue.png", file: "og-editorial-blue.png", type: "image/png" },
+    { route: "/og-data-engineer.png", file: "og-data-engineer.png", type: "image/png" },
+    { route: "/og-circle-blue.png", file: "og-circle-blue.png", type: "image/png" },
     { route: "/assets/profile.jpeg", file: "assets/profile.jpeg", type: "image/jpeg" },
 ];
 
@@ -56,8 +58,12 @@ export default {
             ? new TextDecoder()
                 .decode(decodeBase64(asset.body))
                 .replaceAll(
-                    'content="og-editorial-blue.png"',
-                    \`content="\${url.origin}/og-editorial-blue.png"\`,
+                    'content="og-data-engineer.png"',
+                    \`content="\${url.origin}/og-data-engineer.png"\`,
+                )
+                .replaceAll(
+                    'href="og-circle-blue.png"',
+                    \`href="\${url.origin}/og-circle-blue.png"\`,
                 )
             : decodeBase64(asset.body);
 
