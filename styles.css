@@ -1,18 +1,21 @@
 :root {
-    --navy: #071b33;
-    --navy-soft: #102a49;
-    --blue: #071b33;
-    --blue-light: #f2f5f8;
-    --ink: #142033;
-    --muted: #687487;
-    --paper: #ffffff;
-    --paper-soft: #f5f7fa;
+    --navy: #071827;
+    --navy-soft: #0d2438;
+    --blue: #071827;
+    --blue-light: #f1eee7;
+    --gold: #b89a68;
+    --ink: #142231;
+    --muted: #706f6a;
+    --paper: #fbfaf7;
+    --paper-soft: #f2efe8;
     --white: #ffffff;
-    --line: #dce2e9;
-    --line-dark: rgba(255, 255, 255, 0.18);
+    --ivory: #f6f2e9;
+    --line: #ded9cf;
+    --line-dark: rgba(246, 242, 233, 0.2);
     --header-height: 80px;
     --container: 1320px;
     --font-sans: "Helvetica Neue", "Avenir Next", Helvetica, Arial, sans-serif;
+    --font-display: Iowan Old Style, Baskerville, "Times New Roman", serif;
     --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -94,7 +97,7 @@ button {
     z-index: 100;
     height: var(--header-height);
     color: var(--white);
-    background: rgba(7, 27, 51, 0.96);
+    background: rgba(7, 24, 39, 0.96);
     border-bottom: 1px solid var(--line-dark);
     backdrop-filter: blur(16px);
 }
@@ -114,9 +117,11 @@ button {
 .brand {
     display: inline-flex;
     align-items: center;
-    font-size: 14px;
-    font-weight: 650;
-    letter-spacing: -0.02em;
+    color: var(--ivory);
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .navigation {
@@ -126,7 +131,7 @@ button {
     font-family: var(--font-mono);
     font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.12em;
 }
 
 .navigation > a {
@@ -162,15 +167,15 @@ button {
 
 .navigation .nav-contact {
     padding: 10px 14px;
-    color: var(--navy);
-    background: var(--white);
-    border: 1px solid var(--white);
+    color: var(--ivory);
+    background: transparent;
+    border: 1px solid rgba(184, 154, 104, 0.75);
 }
 
 .navigation .nav-contact:hover,
 .navigation .nav-contact:focus-visible {
-    color: var(--white);
-    background: transparent;
+    color: var(--navy);
+    background: var(--ivory);
 }
 
 .menu-toggle {
@@ -205,14 +210,14 @@ button {
 .hero {
     min-height: 100svh;
     padding: calc(var(--header-height) + clamp(58px, 8vh, 96px)) 0 0;
-    color: var(--white);
+    color: var(--ivory);
     background: var(--navy);
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.7fr);
-    gap: clamp(64px, 10vw, 150px);
+    grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.48fr);
+    gap: clamp(76px, 12vw, 180px);
     align-items: center;
 }
 
@@ -233,30 +238,43 @@ button {
 }
 
 .eyebrow {
-    margin: 0 0 26px;
-    color: rgba(255, 255, 255, 0.62);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 30px;
+    color: var(--gold);
     font-size: 10px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: currentColor;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: clamp(70px, 9.8vw, 148px);
-    font-weight: 700;
-    line-height: 0.79;
-    letter-spacing: -0.085em;
+    max-width: 880px;
+    font-family: var(--font-display);
+    font-size: clamp(78px, 10vw, 154px);
+    font-weight: 400;
+    line-height: 0.78;
+    letter-spacing: -0.055em;
 }
 
 .hero h1 span {
-    color: var(--white);
-    font-weight: 300;
+    color: rgba(246, 242, 233, 0.48);
+    font-style: italic;
+    font-weight: 400;
 }
 
 .hero-intro {
-    max-width: 610px;
-    margin: 42px 0 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: clamp(18px, 1.6vw, 23px);
-    line-height: 1.52;
+    max-width: 560px;
+    margin: 48px 0 0;
+    color: rgba(246, 242, 233, 0.68);
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.65;
     letter-spacing: -0.02em;
 }
 
@@ -274,7 +292,7 @@ button {
     justify-content: space-between;
     gap: 38px;
     padding: 0 18px;
-    border: 1px solid var(--white);
+    border: 1px solid var(--ivory);
     font-family: var(--font-mono);
     font-size: 9px;
     font-weight: 700;
@@ -285,7 +303,7 @@ button {
 
 .button-light {
     color: var(--navy);
-    background: var(--white);
+    background: var(--ivory);
 }
 
 .button:hover,
@@ -299,7 +317,8 @@ button {
     align-items: center;
     gap: 18px;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    color: var(--ivory);
+    border-bottom: 1px solid rgba(184, 154, 104, 0.8);
     font-family: var(--font-mono);
     font-size: 9px;
     font-weight: 700;
@@ -308,7 +327,7 @@ button {
 }
 
 .portrait {
-    width: min(100%, 430px);
+    width: min(100%, 300px);
     margin: 0;
     justify-self: end;
 }
@@ -319,15 +338,17 @@ button {
     object-fit: cover;
     object-position: center 34%;
     border-radius: 50%;
-    filter: saturate(0.58) contrast(1.04);
+    padding: 7px;
+    border: 1px solid rgba(184, 154, 104, 0.75);
+    filter: saturate(0.45) contrast(1.04);
 }
 
 .portrait figcaption {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 10px 0;
-    color: rgba(255, 255, 255, 0.6);
+    padding: 18px 8px 0;
+    color: rgba(246, 242, 233, 0.5);
     font-size: 8px;
 }
 
@@ -335,12 +356,12 @@ button {
     margin-top: clamp(64px, 9vh, 110px);
     margin-bottom: 0;
     padding: 25px 0 27px;
-    color: rgba(255, 255, 255, 0.48);
+    color: rgba(184, 154, 104, 0.78);
     border-top: 1px solid var(--line-dark);
     font-family: var(--font-mono);
     font-size: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
 }
 
 .section {
@@ -364,7 +385,7 @@ button {
 }
 
 .section-marker span {
-    color: var(--navy);
+    color: var(--gold);
     font-weight: 700;
 }
 
@@ -374,7 +395,7 @@ button {
 
 .section-kicker {
     margin: 0 0 22px;
-    color: var(--blue);
+    color: var(--gold);
     font-size: 9px;
     font-weight: 700;
 }
@@ -383,17 +404,20 @@ button {
 .section-heading h2 {
     max-width: 1000px;
     margin: 0;
-    font-size: clamp(44px, 5.6vw, 80px);
-    font-weight: 650;
+    max-width: 940px;
+    font-family: var(--font-display);
+    font-size: clamp(50px, 6.2vw, 90px);
+    font-weight: 400;
     line-height: 0.98;
-    letter-spacing: -0.07em;
+    letter-spacing: -0.045em;
 }
 
 .section-content h2 span,
 .section-heading h2 span {
     display: block;
     color: var(--muted);
-    font-weight: 300;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .profile {
@@ -411,7 +435,7 @@ button {
 .profile-copy p {
     margin: 0;
     color: var(--muted);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.75;
 }
 
@@ -445,7 +469,7 @@ button {
 .profile-facts dd {
     margin: 0;
     font-size: 15px;
-    font-weight: 650;
+    font-weight: 500;
 }
 
 .experience {
@@ -457,7 +481,7 @@ button {
 }
 
 .timeline {
-    border-top: 1px solid var(--ink);
+    border-top: 1px solid var(--gold);
 }
 
 .experience-item {
@@ -485,17 +509,18 @@ button {
 
 .experience-role > p {
     margin: 0 0 11px;
-    color: var(--blue);
+    color: var(--gold);
     font-size: 8px;
     font-weight: 700;
 }
 
 .experience-role h3 {
     margin: 0;
-    font-size: clamp(26px, 3.1vw, 43px);
-    font-weight: 650;
-    line-height: 1.08;
-    letter-spacing: -0.05em;
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.3vw, 48px);
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.035em;
 }
 
 .experience-detail ul {
@@ -515,7 +540,7 @@ button {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--blue);
+    color: var(--gold);
 }
 
 .tags {
@@ -527,8 +552,8 @@ button {
 
 .tags span {
     padding: 6px 8px;
-    color: var(--blue);
-    border: 1px solid #b8c8db;
+    color: var(--muted);
+    border: 1px solid #cfc6b7;
     font-size: 8px;
 }
 
@@ -539,7 +564,7 @@ button {
 
 .expertise {
     color: var(--ink);
-    background: var(--paper-soft);
+    background: var(--ivory);
 }
 
 .section-marker-light {
@@ -563,11 +588,11 @@ button {
 }
 
 .expertise .section-marker-light span {
-    color: var(--navy);
+    color: var(--gold);
 }
 
 .expertise .section-kicker-light {
-    color: var(--navy);
+    color: var(--gold);
 }
 
 .expertise .section-content h2 span {
@@ -583,7 +608,7 @@ button {
 
 .skill-list span {
     padding: 11px 14px;
-    border: 1px solid var(--line);
+    border: 1px solid #cfc6b7;
     font-size: 13px;
 }
 
@@ -602,16 +627,17 @@ button {
 }
 
 .domain-list article > span {
-    color: var(--muted);
+    color: var(--gold);
     font-family: var(--font-mono);
     font-size: 9px;
 }
 
 .domain-list h3 {
     margin: 0;
-    font-size: clamp(23px, 2.4vw, 34px);
-    font-weight: 600;
-    letter-spacing: -0.04em;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 2.8vw, 40px);
+    font-weight: 400;
+    letter-spacing: -0.025em;
 }
 
 .domain-list p {
@@ -625,7 +651,7 @@ button {
 }
 
 .education-list {
-    border-top: 1px solid var(--ink);
+    border-top: 1px solid var(--gold);
 }
 
 .education-list article {
@@ -644,16 +670,17 @@ button {
 
 .education-list h3 {
     margin: 0 0 7px;
-    font-size: clamp(25px, 3vw, 40px);
-    font-weight: 650;
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.2vw, 44px);
+    font-weight: 400;
     line-height: 1.08;
     letter-spacing: -0.045em;
 }
 
 .education-list p {
     margin: 0 0 4px;
-    color: var(--blue);
-    font-weight: 600;
+    color: var(--gold);
+    font-weight: 500;
 }
 
 .education-list article div > span {
@@ -674,7 +701,8 @@ button {
     padding: 22px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: clamp(22px, 4.2vw, 60px);
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4.4vw, 64px);
     line-height: 1;
     letter-spacing: -0.05em;
 }
@@ -771,8 +799,8 @@ button {
 
 @media (max-width: 1040px) {
     .hero-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.62fr);
-        gap: 48px;
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.42fr);
+        gap: 56px;
     }
 
     .section-grid,
@@ -847,7 +875,7 @@ button {
     }
 
     .portrait {
-        width: min(82vw, 440px);
+        width: min(66vw, 280px);
         justify-self: start;
     }
 
