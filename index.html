@@ -3,328 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Dellytix - Freelance en Data</title>
+    <meta name="description" content="Portfolio de David Delhaye, Data Engineer spécialisé en Azure, Snowflake, CI/CD, Dagster, gouvernance data et BI.">
+    <meta name="theme-color" content="#f2efe8">
+    <meta property="og:title" content="David Delhaye — Data Engineer">
+    <meta property="og:description" content="Ingénierie data, gouvernance et BI : découvrez le parcours et les expertises de David Delhaye.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-cv-portfolio.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="David Delhaye — Data Engineer">
+    <meta name="twitter:description" content="Ingénierie data, gouvernance et BI.">
+    <meta name="twitter:image" content="og-cv-portfolio.png">
+    <title>David Delhaye — Data Engineer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-chart-line"></i>
-                <span>Dellytix</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Solutions</a></li>
-                <li><a href="#stack">Stack</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <main>
-        <!-- Hero -->
-        <section id="accueil" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <p class="eyebrow">Freelance Data & Analytics Engineering</p>
-                    <h1>Je conçois des plateformes data fiables et orientées métier.</h1>
-                    <p class="intro">J’accompagne les scale-ups et les directions data à industrialiser leur patrimoine : ingestion cloud, gouvernance, qualité, BI et automation. Une approche produit, des pipelines audités et un langage commun entre tech et business.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Planifier un call</a>
-                        <a href="#services" class="btn btn-secondary">Voir les solutions</a>
-                    </div>
-                </div>
-                <div class="hero-card">
-                    <div class="profile-badge">
-                        <img src="assets/profile.jpeg" alt="David Delhaye" loading="lazy">
-                        <div>
-                            <p class="badge-label">Dellytix</p>
-                            <p class="badge-title">Data Engineer indépendant</p>
-                        </div>
-                    </div>
-                    <ul class="badge-list">
-                        <li><i class="fas fa-check"></i> Pipelines Azure & Snowflake certifiés</li>
-                        <li><i class="fas fa-check"></i> Catalogage & data lineage Datagalaxy</li>
-                        <li><i class="fas fa-check"></i> BI Ops (MicroStrategy, R/Shiny)</li>
-                        <li><i class="fas fa-check"></i> Culture produit & rituels agiles</li>
-                    </ul>
-                    <a class="badge-link" href="https://www.linkedin.com/in/d-delhaye" target="_blank" rel="noopener noreferrer">
-                        Voir LinkedIn <i class="fas fa-arrow-up-right-from-square"></i>
+    <header class="site-header" data-header>
+        <a class="wordmark" href="#accueil" aria-label="David Delhaye — Accueil">
+            <span>David</span>
+            <span>Delhaye</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+            <span class="sr-only">Ouvrir le menu</span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="navigation" id="navigation" aria-label="Navigation principale">
+            <a href="#profil">Profil</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#expertises">Expertises</a>
+            <a href="#formation">Formation</a>
+        </nav>
+
+        <a class="header-contact" href="mailto:david.ddelhaye@gmail.com">
+            Écrire un message <span aria-hidden="true">↗</span>
+        </a>
+    </header>
+
+    <main id="contenu">
+        <section class="hero" id="accueil" aria-labelledby="hero-title">
+            <div class="hero-orbit" aria-hidden="true"></div>
+            <div class="hero-copy">
+                <p class="eyebrow" data-reveal>
+                    <span>Data Engineer</span>
+                    <span>Île-de-France</span>
+                </p>
+                <h1 id="hero-title" data-reveal>
+                    <span>David</span>
+                    <span>Delhaye.</span>
+                </h1>
+                <p class="hero-intro" data-reveal>
+                    Je conçois des systèmes data fiables qui relient
+                    <strong>ingénierie</strong>, <strong>gouvernance</strong>
+                    et <strong>usages métier</strong>.
+                </p>
+                <div class="hero-actions" data-reveal>
+                    <a class="button button-dark" href="#parcours">
+                        Voir mon parcours <span aria-hidden="true">↓</span>
+                    </a>
+                    <a class="text-link" href="CV_DELHAYE.pdf" download>
+                        Télécharger le CV <span aria-hidden="true">↘</span>
                     </a>
                 </div>
             </div>
+
+            <figure class="portrait" data-reveal>
+                <div class="portrait-frame">
+                    <img src="assets/profile.jpeg" alt="Portrait de David Delhaye" width="724" height="1086">
+                </div>
+                <figcaption>
+                    <span>01</span>
+                    <p>De la donnée brute<br>à la décision.</p>
+                </figcaption>
+                <span class="portrait-sticker" aria-hidden="true">DATA<br>ENGINEER</span>
+            </figure>
+
+            <div class="hero-aside" data-reveal>
+                <p>Stack principale</p>
+                <ul>
+                    <li>Azure</li>
+                    <li>Snowflake</li>
+                    <li>Dagster</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <a class="scroll-cue" href="#profil" aria-label="Découvrir le profil">
+                <span aria-hidden="true">↓</span>
+                <span>Découvrir</span>
+            </a>
         </section>
 
-        <!-- Studio -->
-        <section class="studio">
-            <div class="container studio-grid">
-                <div class="studio-details">
-                    <p class="eyebrow">Sur le terrain</p>
-                    <h2>Je construis vos assets data depuis vos locaux ou à distance.</h2>
-                    <p>Workshops d’architecture, pair-programming, évangélisation métier : je prends part à vos rituels pour garder vos équipes alignées et autonomes.</p>
-                    <ul>
-                        <li>Présence hybride Paris & remote</li>
-                        <li>Ateliers blueprint et coaching équipes</li>
-                        <li>Documentation produit et vidéo récap</li>
-                    </ul>
+        <section class="signal-strip" aria-label="Domaines d’expertise">
+            <div>
+                <span>Data Engineering</span><i aria-hidden="true">✦</i>
+                <span>Cloud &amp; CI/CD</span><i aria-hidden="true">✦</i>
+                <span>Data Gouvernance</span><i aria-hidden="true">✦</i>
+                <span>Business Intelligence</span><i aria-hidden="true">✦</i>
+                <span>Data Engineering</span><i aria-hidden="true">✦</i>
+            </div>
+        </section>
+
+        <section class="profile section" id="profil" aria-labelledby="profil-title">
+            <div class="section-shell">
+                <div class="section-label" data-reveal>
+                    <span>01</span>
+                    <p>Profil</p>
                 </div>
-                <div class="studio-image">
-                    <img src="assets/profile.jpeg" alt="David Delhaye en mission" loading="lazy">
+
+                <div class="profile-main">
+                    <p class="section-kicker" data-reveal>Concevoir · Fiabiliser · Automatiser</p>
+                    <h2 id="profil-title" data-reveal>
+                        La donnée n’a de valeur que lorsqu’elle
+                        <em>circule avec confiance.</em>
+                    </h2>
+                    <div class="profile-detail" data-reveal>
+                        <p>
+                            Spécialisé en Azure, Snowflake, CI/CD et orchestration
+                            Dagster, j’aide les entreprises à construire des pipelines
+                            de données robustes et maintenables.
+                        </p>
+                        <p>
+                            Mon expérience couvre toute la chaîne : ingénierie data,
+                            gouvernance avec DataGalaxy et restitution BI avec
+                            MicroStrategy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="profile-facts" data-reveal>
+                    <div>
+                        <span>Base</span>
+                        <strong>Île-de-France</strong>
+                    </div>
+                    <div>
+                        <span>Langue</span>
+                        <strong>Français</strong>
+                    </div>
+                    <div>
+                        <span>Fil conducteur</span>
+                        <strong>Des données fiables, des usages concrets</strong>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions -->
-        <section id="services" class="solutions">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Offres modulaires</p>
-                    <h2>Des briques data conçues pour livrer vite et bien</h2>
-                    <p>Je mobilise un socle commun (CI/CD, observabilité, QA) et j’assemble vos features à la carte.</p>
+        <section class="experience section" id="parcours" aria-labelledby="parcours-title">
+            <div class="section-shell">
+                <div class="section-label section-label-light" data-reveal>
+                    <span>02</span>
+                    <p>Parcours</p>
                 </div>
-                <div class="solutions-grid">
-                    <article class="solution-card">
-                        <div class="solution-icon"><i class="fas fa-diagram-project"></i></div>
-                        <h3>Blueprint Plateforme</h3>
-                        <p>Architecture cible, gouvernance, roadmap et backlog technique détaillé pour lancer votre data factory.</p>
-                        <ul>
-                            <li>Audit Maturity & risques</li>
-                            <li>Schémas d’architecture</li>
-                            <li>Plan d’implémentation SMQ</li>
-                        </ul>
-                    </article>
-                    <article class="solution-card">
-                        <div class="solution-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                        <h3>Data Engineering Ops</h3>
-                        <p>Ingestion, orchestration, monitoring et tests pour fiabiliser votre pipeline de bout en bout.</p>
-                        <ul>
-                            <li>dbt, Airflow, Synapse</li>
-                            <li>Qualité & alerting</li>
-                            <li>FinOps & SLA</li>
-                        </ul>
-                    </article>
-                    <article class="solution-card">
-                        <div class="solution-icon"><i class="fas fa-table"></i></div>
-                        <h3>Analytics Engineering</h3>
-                        <p>Modèles métiers, métriques fiables et dashboards prêts pour les décideurs.</p>
-                        <ul>
-                            <li>dbt metrics layer</li>
-                            <li>BI (MicroStrategy, Power BI)</li>
-                            <li>Data storytelling</li>
-                        </ul>
-                    </article>
-                    <article class="solution-card">
-                        <div class="solution-icon"><i class="fas fa-shield"></i></div>
-                        <h3>Gouvernance & conformité</h3>
-                        <p>Catalogage, data lineage, rôles et politiques pour un patrimoine exploitable et auditable.</p>
-                        <ul>
-                            <li>Datagalaxy / Purview</li>
-                            <li>Playbooks RGPD</li>
-                            <li>Data contracts</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <!-- Process -->
-        <section id="process" class="method">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Méthode</p>
-                    <h2>Un cadre clair, de l’audit au run</h2>
+                <div class="section-intro section-intro-light">
+                    <p class="section-kicker" data-reveal>Expériences professionnelles</p>
+                    <h2 id="parcours-title" data-reveal>
+                        Un parcours entre plateforme, analytics et métier.
+                    </h2>
                 </div>
+
                 <div class="timeline">
-                    <div class="step">
-                        <span class="step-number">01</span>
-                        <h3>Diagnostic express</h3>
-                        <p>Interviews, audit infra & data contracts, cartographie des quick wins et risques critiques.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">02</span>
-                        <h3>Blueprint & backlog</h3>
-                        <p>Architecture cible, backlog priorisé et engagements de service pour aligner tech, métier et finance.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">03</span>
-                        <h3>Sprints & transfert</h3>
-                        <p>Mise en production incrémentale, runbooks, formation des équipes internes et instrumentation.</p>
-                    </div>
+                    <article class="career-card" data-reveal>
+                        <div class="career-meta">
+                            <span class="career-index">01</span>
+                            <p>Depuis nov. 2023</p>
+                        </div>
+                        <div class="career-heading">
+                            <p>Franprix · Ivry-sur-Seine</p>
+                            <h3>Data Engineer</h3>
+                        </div>
+                        <div class="career-body">
+                            <ul>
+                                <li>Pipelines CI/CD avec GitLab et Azure DevOps.</li>
+                                <li>Conception de tables et schémas Snowflake.</li>
+                                <li>Automatisation des processus de Data Gouvernance.</li>
+                                <li>Tables analytics et reportings MicroStrategy.</li>
+                                <li>Accompagnement des métiers dans leur culture data.</li>
+                            </ul>
+                            <div class="tags" aria-label="Technologies utilisées chez Franprix">
+                                <span>Python</span><span>GitLab</span><span>Linux</span>
+                                <span>Docker</span><span>Azure DevOps</span>
+                                <span>DataGalaxy</span><span>MicroStrategy</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-reveal>
+                        <div class="career-meta">
+                            <span class="career-index">02</span>
+                            <p>Juin 2022 — oct. 2023</p>
+                        </div>
+                        <div class="career-heading">
+                            <p>Orange Business Services · Mission EDF</p>
+                            <h3>Consultant confirmé<br>Data Scientist</h3>
+                        </div>
+                        <div class="career-body">
+                            <ul>
+                                <li>Dashboards R Shiny pour les campagnes marketing.</li>
+                                <li>ETL avec PySpark et SparkR.</li>
+                                <li>Analyse et recalibration d’un modèle de scoring.</li>
+                                <li>Modules Python réutilisables pour standardiser les traitements.</li>
+                            </ul>
+                            <div class="tags" aria-label="Technologies utilisées chez Orange Business Services">
+                                <span>R</span><span>Docker</span><span>SQL</span>
+                                <span>Oracle Developer</span><span>Spark</span><span>GitLab</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="career-card" data-reveal>
+                        <div class="career-meta">
+                            <span class="career-index">03</span>
+                            <p>Nov. 2019 — juin 2022</p>
+                        </div>
+                        <div class="career-heading">
+                            <p>Iliad / Free · Paris</p>
+                            <h3>Data Scientist</h3>
+                        </div>
+                        <div class="career-body">
+                            <ul>
+                                <li>ETL alimentant des tables analytics MySQL pour Tableau.</li>
+                                <li>Automatisation de reportings pour le réseau.</li>
+                                <li>Mentoring Python et R.</li>
+                                <li>Participation aux recrutements stages et CDI.</li>
+                            </ul>
+                            <div class="tags" aria-label="Technologies utilisées chez Iliad">
+                                <span>Linux</span><span>GitLab</span><span>Python</span>
+                                <span>R</span><span>MySQL</span><span>Tableau</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Expériences -->
-        <section id="experience" class="experience">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Expériences</p>
-                    <h2>6 ans à faire parler la donnée pour des acteurs exigeants</h2>
-                    <p>Retail, énergie, télécoms : j’accompagne les équipes métier et data à industrialiser, gouverner et valoriser leurs plateformes.</p>
+        <section class="expertise section" id="expertises" aria-labelledby="expertises-title">
+            <div class="section-shell">
+                <div class="section-label" data-reveal>
+                    <span>03</span>
+                    <p>Expertises</p>
                 </div>
-                <div class="experience-grid">
-                    <article class="experience-card">
-                        <header>
-                            <span class="xp-company">Franprix · Ivry-sur-Seine</span>
-                            <span class="xp-period">Nov. 2023 — Aujourd’hui</span>
-                        </header>
-                        <h3>Data Engineer</h3>
-                        <p>Industrialisation de la chaîne data (CI/CD, gouvernance, BI) pour fiabiliser les usages métiers.</p>
-                        <ul>
-                            <li>Pipelines CI/CD GitLab & Azure DevOps</li>
-                            <li>Modélisation Snowflake et tableaux MicroStrategy</li>
-                            <li>Automatisation Data Gouvernance (Datagalaxy)</li>
-                            <li>Accompagnement data driven auprès des métiers</li>
-                            <li>Stack : Python, GitLab, Linux, Docker, Azure DevOps</li>
-                        </ul>
-                    </article>
-                    <article class="experience-card">
-                        <header>
-                            <span class="xp-company">Orange Business Services</span>
-                            <span class="xp-period">Juin 2022 — Oct. 2023</span>
-                        </header>
-                        <h3>Consultant Confirmé Data Scientist</h3>
-                        <p>Mission EDF – CSC Datascience & IA : dashboards, ETL Spark et recalibration des modèles marketing.</p>
-                        <ul>
-                            <li>Développement d’applications et dashboards R Shiny</li>
-                            <li>ETL PySpark / SparkR pour alimenter les rapports</li>
-                            <li>Optimisation d’un modèle de scoring</li>
-                            <li>Modules Python réutilisables pour industrialiser les traitements</li>
-                            <li>Stack : R, Docker, SQL, Oracle, Spark, GitLab</li>
-                        </ul>
-                    </article>
-                    <article class="experience-card">
-                        <header>
-                            <span class="xp-company">Iliad / Free · Paris</span>
-                            <span class="xp-period">Nov. 2019 — Juin 2022</span>
-                        </header>
-                        <h3>Data Scientist</h3>
-                        <p>Automatisation de reporting réseau et alimentation des modèles Tableau à partir d’ETL maison.</p>
-                        <ul>
-                            <li>ETL MySQL pour tables analytics</li>
-                            <li>Automatisation des rapports CDT & direction</li>
-                            <li>Mentoring Python & R, participation aux recrutements</li>
-                            <li>Stack : Linux, GitLab, Python, R, MySQL, Tableau</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <!-- Stack -->
-        <section id="stack" class="stack">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Stack de prédilection</p>
-                    <h2>Cloud, data et BI que j’assemble chaque semaine</h2>
+                <div class="section-intro">
+                    <p class="section-kicker" data-reveal>Stack &amp; domaines</p>
+                    <h2 id="expertises-title" data-reveal>
+                        Une stack pensée pour livrer,
+                        <em>observer et faire durer.</em>
+                    </h2>
                 </div>
-                <div class="stack-grid">
-                    <article class="stack-block">
-                        <h3>Cloud & orchestration</h3>
-                        <div class="tags">
-                            <span>Azure</span>
+
+                <div class="expertise-board" data-reveal>
+                    <article class="expertise-lead">
+                        <span class="board-label">Socle technique</span>
+                        <div class="skill-cloud">
+                            <span>Python</span>
                             <span>Snowflake</span>
-                            <span>Synapse</span>
-                            <span>Airflow</span>
                             <span>Azure DevOps</span>
-                        </div>
-                    </article>
-                    <article class="stack-block">
-                        <h3>Data engineering</h3>
-                        <div class="tags">
-                            <span>dbt</span>
-                            <span>Databricks</span>
-                            <span>Great Expectations</span>
-                            <span>Kafka</span>
-                            <span>Terraform</span>
-                        </div>
-                    </article>
-                    <article class="stack-block">
-                        <h3>Analytics & BI</h3>
-                        <div class="tags">
+                            <span>Dagster</span>
+                            <span>Docker</span>
+                            <span>GitLab</span>
+                            <span>Linux</span>
                             <span>MicroStrategy</span>
-                            <span>Power BI</span>
-                            <span>Looker</span>
-                            <span>R Shiny</span>
-                            <span>Metabase</span>
                         </div>
+                    </article>
+
+                    <div class="expertise-domains">
+                        <article>
+                            <span>01</span>
+                            <h3>Data Engineering</h3>
+                            <p>Ingestion, transformation, modélisation et orchestration.</p>
+                        </article>
+                        <article>
+                            <span>02</span>
+                            <h3>Data Gouvernance</h3>
+                            <p>Qualité, conformité, catalogage et appropriation métier.</p>
+                        </article>
+                        <article>
+                            <span>03</span>
+                            <h3>Analytics &amp; BI</h3>
+                            <p>Tables analytics, reporting et aide à la décision.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education section" id="formation" aria-labelledby="formation-title">
+            <div class="section-shell">
+                <div class="section-label" data-reveal>
+                    <span>04</span>
+                    <p>Formation</p>
+                </div>
+
+                <div class="section-intro">
+                    <p class="section-kicker" data-reveal>Diplômes</p>
+                    <h2 id="formation-title" data-reveal>
+                        Une base scientifique,
+                        <em>orientée terrain.</em>
+                    </h2>
+                </div>
+
+                <div class="degree-list">
+                    <article data-reveal>
+                        <span class="degree-year">2018 — 2019</span>
+                        <div>
+                            <h3>Mastère Spécialisé Big Data</h3>
+                            <p>Grenoble École de Management · Grenoble-INP Ensimag</p>
+                            <span>Grenoble, France</span>
+                        </div>
+                        <span class="degree-arrow" aria-hidden="true">↗</span>
+                    </article>
+                    <article data-reveal>
+                        <span class="degree-year">2017 — 2018</span>
+                        <div>
+                            <h3>Master 2 Mathématiques et Applications</h3>
+                            <p>Aix-Marseille Université</p>
+                            <span>Marseille, France</span>
+                        </div>
+                        <span class="degree-arrow" aria-hidden="true">↗</span>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="contact">
-            <div class="container contact-grid">
-                <div class="contact-card">
-                    <p class="eyebrow">Travaillons ensemble</p>
-                    <h2>Décrivez votre enjeu data, je reviens vers vous sous 24h.</h2>
-                    <p>Mission flash, renfort d’équipe ou accompagnement long terme : tout commence par une session de cadrage.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <p>Email</p>
-                                <a href="mailto:david.ddelhaye@gmail.com">david.ddelhaye@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <p>Téléphone</p>
-                                <a href="tel:+33600000000">+33 6 XX XX XX XX</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <p>LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/d-delhaye" target="_blank" rel="noopener noreferrer">@Dellytix</a>
-                            </div>
-                        </div>
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-orbit" aria-hidden="true"></div>
+            <div class="section-shell">
+                <div class="section-label section-label-contact" data-reveal>
+                    <span>05</span>
+                    <p>Contact</p>
+                </div>
+
+                <div class="contact-main">
+                    <p class="section-kicker" data-reveal>Une idée, un besoin, une opportunité ?</p>
+                    <h2 id="contact-title" data-reveal>
+                        Parlons de ce que la donnée
+                        <em>peut débloquer.</em>
+                    </h2>
+                    <a class="contact-email" href="mailto:david.ddelhaye@gmail.com" data-reveal>
+                        <span>david.ddelhaye@gmail.com</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <div class="contact-links" data-reveal>
+                        <a href="tel:+33672590422">
+                            <span>Téléphone</span>
+                            <strong>+33 6 72 59 04 22</strong>
+                        </a>
+                        <a href="https://www.linkedin.com/in/d-delhaye/" target="_blank" rel="noopener noreferrer">
+                            <span>LinkedIn</span>
+                            <strong>d-delhaye ↗</strong>
+                        </a>
+                        <a href="CV_DELHAYE.pdf" download>
+                            <span>Curriculum vitæ</span>
+                            <strong>Télécharger ↓</strong>
+                        </a>
                     </div>
                 </div>
-                <form class="contact-form" aria-label="Envoyer un message">
-                    <label>
-                        Nom / société
-                        <input type="text" name="name" placeholder="Votre nom" required>
-                    </label>
-                    <label>
-                        Email professionnel
-                        <input type="email" name="email" placeholder="prenom@entreprise.com" required>
-                    </label>
-                    <label>
-                        Enjeu principal
-                        <textarea name="message" rows="4" placeholder="Ex: migration vers Snowflake, fiabilisation pipelines, dashboard exécutif..." required></textarea>
-                    </label>
-                    <button type="submit" class="btn btn-primary">Envoyer (demo)</button>
-                </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Dellytix</span>
-                </div>
-                <p>&copy; 2025 Dellytix. Indépendant basé à Paris.</p>
-            </div>
-        </div>
+    <footer class="site-footer">
+        <p>© <span data-year>2026</span> David Delhaye</p>
+        <p>Data Engineer · Île-de-France</p>
+        <a href="#accueil">Retour en haut ↑</a>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-</html> 
+</html>

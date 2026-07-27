@@ -15,6 +15,7 @@ yarn-debug.log*
 yarn-error.log*
 .cache/
 .parcel-cache/
+tmp/
 
 # Python venvs (if ever added)
 venv/
@@ -25,3 +26,4 @@ venv/
 
 # pdf
 *.pdf
+!CV_DELHAYE.pdf
