@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de David Delhaye, Data Engineer spécialisé en Azure, Snowflake, CI/CD, Dagster, gouvernance data et BI.">
-    <meta name="theme-color" content="#071b33">
+    <meta name="theme-color" content="#f3f2ee">
     <meta property="og:title" content="David Delhaye — Data Engineer">
     <meta property="og:description" content="Data Engineering, gouvernance et BI. Découvrez le parcours de David Delhaye.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="og-luxury-blue.png">
+    <meta property="og:image" content="og-editorial-blue.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="David Delhaye — Data Engineer">
     <meta name="twitter:description" content="Data Engineering, gouvernance et BI.">
-    <meta name="twitter:image" content="og-luxury-blue.png">
+    <meta name="twitter:image" content="og-editorial-blue.png">
     <title>David Delhaye — Data Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -23,7 +23,7 @@
     <header class="site-header" data-header>
         <div class="container header-inner">
             <a class="brand" href="#accueil" aria-label="David Delhaye — Accueil">
-                <span>David Delhaye</span>
+                David Delhaye
             </a>
 
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">
@@ -35,115 +35,113 @@
             <nav class="navigation" id="navigation" aria-label="Navigation principale">
                 <a href="#profil">Profil</a>
                 <a href="#parcours">Parcours</a>
-                <a href="#expertises">Expertises</a>
+                <a href="#expertises">Stack</a>
                 <a href="#formation">Formation</a>
-                <a class="nav-contact" href="#contact">Contact</a>
+                <a href="#contact"><span class="nav-dot" aria-hidden="true"></span> Contact</a>
             </nav>
         </div>
     </header>
 
     <main id="contenu">
         <section class="hero" id="accueil" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow" data-reveal>Data Engineer · Île-de-France</p>
+            <div class="container">
+                <div class="hero-topline" data-reveal>
+                    <span>Portfolio / 2026</span>
+                    <span>Data · Cloud · Gouvernance</span>
+                    <span>Île-de-France</span>
+                </div>
+
+                <div class="hero-title-row">
                     <h1 id="hero-title" data-reveal>
-                        David<br>
-                        <span>Delhaye.</span>
+                        <span>Data</span>
+                        <strong>Engineer</strong>
                     </h1>
+
+                    <figure class="portrait" data-reveal>
+                        <img src="assets/profile.jpeg" alt="Portrait de David Delhaye" width="724" height="1086">
+                        <figcaption>David Delhaye</figcaption>
+                    </figure>
+                </div>
+
+                <div class="hero-bottom">
                     <p class="hero-intro" data-reveal>
-                        Je conçois des pipelines de données fiables,
-                        de l’ingénierie aux usages métier.
+                        Je construis des systèmes data fiables, du pipeline
+                        jusqu’aux usages métier.
                     </p>
                     <div class="hero-actions" data-reveal>
-                        <a class="button button-light" href="mailto:david.ddelhaye@gmail.com">
+                        <a class="button button-primary" href="mailto:david.ddelhaye@gmail.com">
                             Me contacter <span aria-hidden="true">↗</span>
                         </a>
-                        <a class="hero-link" href="CV_DELHAYE.pdf" download>
+                        <a class="button button-plain" href="CV_DELHAYE.pdf" download>
                             Télécharger le CV <span aria-hidden="true">↓</span>
                         </a>
                     </div>
                 </div>
-
-                <figure class="portrait" data-reveal>
-                    <img src="assets/profile.jpeg" alt="Portrait de David Delhaye" width="724" height="1086">
-                    <figcaption>
-                        <span>Data Engineer</span>
-                        <span>France</span>
-                    </figcaption>
-                </figure>
             </div>
-
-            <p class="container hero-stack" data-reveal>
-                Azure · Snowflake · Dagster · Python · DataGalaxy
-            </p>
         </section>
 
-        <section class="section profile" id="profil" aria-labelledby="profil-title">
-            <div class="container section-grid">
-                <div class="section-marker" data-reveal>
+        <section class="profile section" id="profil" aria-labelledby="profil-title">
+            <div class="container profile-grid">
+                <div class="section-label" data-reveal>
                     <span>01</span>
                     <p>Profil</p>
                 </div>
 
-                <div class="section-content">
-                    <p class="section-kicker" data-reveal>Concevoir · Fiabiliser · Automatiser</p>
+                <div class="profile-statement">
+                    <p class="eyebrow" data-reveal>Concevoir · Fiabiliser · Automatiser</p>
                     <h2 id="profil-title" data-reveal>
-                        La donnée comme fondation
-                        <span>d’usages concrets.</span>
+                        Transformer la donnée en infrastructure
+                        <span>utile et durable.</span>
                     </h2>
-
-                    <div class="profile-copy" data-reveal>
-                        <p>
-                            Spécialisé en Azure, Snowflake, CI/CD et orchestration
-                            Dagster, j’aide les entreprises à construire des pipelines
-                            de données fiables et maintenables.
-                        </p>
-                        <p>
-                            Mon expérience relie l’ingénierie data, la gouvernance avec
-                            DataGalaxy et la restitution BI avec MicroStrategy.
-                        </p>
-                    </div>
-
-                    <dl class="profile-facts" data-reveal>
-                        <div>
-                            <dt>Localisation</dt>
-                            <dd>Île-de-France</dd>
-                        </div>
-                        <div>
-                            <dt>Langue</dt>
-                            <dd>Français</dd>
-                        </div>
-                        <div>
-                            <dt>Domaines</dt>
-                            <dd>Engineering · Gouvernance · BI</dd>
-                        </div>
-                    </dl>
                 </div>
+
+                <div class="profile-copy" data-reveal>
+                    <p>
+                        Spécialisé en Azure, Snowflake, CI/CD et orchestration Dagster,
+                        j’aide les entreprises à concevoir et automatiser leurs
+                        pipelines de données.
+                    </p>
+                    <p>
+                        Mon expérience couvre l’ingénierie data, la gouvernance avec
+                        DataGalaxy et la restitution BI avec MicroStrategy.
+                    </p>
+                </div>
+
+                <dl class="profile-facts" data-reveal>
+                    <div>
+                        <dt>Base</dt>
+                        <dd>Île-de-France</dd>
+                    </div>
+                    <div>
+                        <dt>Langue</dt>
+                        <dd>Français</dd>
+                    </div>
+                    <div>
+                        <dt>Focus</dt>
+                        <dd>Engineering · Gouvernance · BI</dd>
+                    </div>
+                </dl>
             </div>
         </section>
 
-        <section class="section experience" id="parcours" aria-labelledby="parcours-title">
+        <section class="experience section" id="parcours" aria-labelledby="parcours-title">
             <div class="container">
-                <div class="section-heading">
-                    <div class="section-marker" data-reveal>
+                <div class="experience-heading">
+                    <div class="section-label section-label-light" data-reveal>
                         <span>02</span>
                         <p>Parcours</p>
                     </div>
                     <div>
-                        <p class="section-kicker" data-reveal>Expériences professionnelles</p>
-                        <h2 id="parcours-title" data-reveal>
-                            De la science des données
-                            <span>à l’ingénierie data.</span>
-                        </h2>
+                        <p class="eyebrow eyebrow-light" data-reveal>Expériences professionnelles</p>
+                        <h2 id="parcours-title" data-reveal>Expérience.</h2>
                     </div>
                 </div>
 
                 <div class="timeline">
                     <article class="experience-item" data-reveal>
-                        <div class="experience-date">
-                            <span>Depuis</span>
-                            <strong>Nov. 2023</strong>
+                        <div class="experience-year">
+                            <strong>2023</strong>
+                            <span>— Aujourd’hui</span>
                         </div>
                         <div class="experience-role">
                             <p>Franprix · Ivry-sur-Seine</p>
@@ -152,10 +150,10 @@
                         <div class="experience-detail">
                             <ul>
                                 <li>Pipelines CI/CD avec GitLab et Azure DevOps.</li>
-                                <li>Tables et schémas sous Snowflake.</li>
-                                <li>Automatisation des processus de Data Gouvernance.</li>
+                                <li>Conception de tables et schémas Snowflake.</li>
+                                <li>Automatisation de la Data Gouvernance.</li>
                                 <li>Tables analytics et reportings MicroStrategy.</li>
-                                <li>Accompagnement des métiers dans leur culture data.</li>
+                                <li>Accompagnement data des équipes métier.</li>
                             </ul>
                             <div class="tags" aria-label="Technologies utilisées chez Franprix">
                                 <span>Python</span><span>GitLab</span><span>Linux</span>
@@ -166,9 +164,9 @@
                     </article>
 
                     <article class="experience-item" data-reveal>
-                        <div class="experience-date">
-                            <span>Juin 2022</span>
-                            <strong>Oct. 2023</strong>
+                        <div class="experience-year">
+                            <strong>2022</strong>
+                            <span>— 2023</span>
                         </div>
                         <div class="experience-role">
                             <p>Orange Business Services · Mission EDF</p>
@@ -178,8 +176,8 @@
                             <ul>
                                 <li>Dashboards R Shiny pour les campagnes marketing.</li>
                                 <li>ETL avec PySpark et SparkR.</li>
-                                <li>Analyse et recalibration d’un modèle de scoring.</li>
-                                <li>Modules Python réutilisables.</li>
+                                <li>Recalibration d’un modèle de scoring.</li>
+                                <li>Développement de modules Python réutilisables.</li>
                             </ul>
                             <div class="tags" aria-label="Technologies utilisées chez Orange Business Services">
                                 <span>R</span><span>Docker</span><span>SQL</span>
@@ -189,9 +187,9 @@
                     </article>
 
                     <article class="experience-item" data-reveal>
-                        <div class="experience-date">
-                            <span>Nov. 2019</span>
-                            <strong>Juin 2022</strong>
+                        <div class="experience-year">
+                            <strong>2019</strong>
+                            <span>— 2022</span>
                         </div>
                         <div class="experience-role">
                             <p>Iliad / Free · Paris</p>
@@ -199,8 +197,8 @@
                         </div>
                         <div class="experience-detail">
                             <ul>
-                                <li>ETL alimentant des tables analytics MySQL pour Tableau.</li>
-                                <li>Automatisation de reportings pour le réseau.</li>
+                                <li>ETL pour des tables analytics MySQL utilisées dans Tableau.</li>
+                                <li>Automatisation de reportings réseau.</li>
                                 <li>Mentoring Python et R.</li>
                                 <li>Participation aux recrutements stages et CDI.</li>
                             </ul>
@@ -214,120 +212,101 @@
             </div>
         </section>
 
-        <section class="section expertise" id="expertises" aria-labelledby="expertises-title">
-            <div class="container section-grid">
-                <div class="section-marker section-marker-light" data-reveal>
+        <section class="expertise section" id="expertises" aria-labelledby="expertises-title">
+            <div class="container expertise-grid">
+                <div class="section-label" data-reveal>
                     <span>03</span>
-                    <p>Expertises</p>
+                    <p>Stack</p>
                 </div>
 
-                <div class="section-content">
-                    <p class="section-kicker section-kicker-light" data-reveal>Stack &amp; domaines</p>
+                <div class="expertise-main">
+                    <p class="eyebrow" data-reveal>Outils &amp; domaines</p>
                     <h2 id="expertises-title" data-reveal>
-                        Un socle technique
-                        <span>simple et robuste.</span>
+                        Une stack pensée pour
+                        <span>livrer et durer.</span>
                     </h2>
 
-                    <div class="skill-list" data-reveal aria-label="Compétences techniques">
+                    <div class="skill-wall" data-reveal aria-label="Compétences techniques">
                         <span>Python</span>
+                        <span>Snowflake</span>
+                        <span>Azure DevOps</span>
+                        <span>Dagster</span>
                         <span>Docker</span>
                         <span>GitLab</span>
                         <span>Linux</span>
-                        <span>Snowflake</span>
                         <span>MicroStrategy</span>
-                        <span>Azure DevOps</span>
-                        <span>Dagster</span>
                     </div>
+                </div>
 
-                    <div class="domain-list">
-                        <article data-reveal>
-                            <span>01</span>
-                            <h3>Data Engineering</h3>
-                            <p>Ingestion, transformation, modélisation et orchestration.</p>
-                        </article>
-                        <article data-reveal>
-                            <span>02</span>
-                            <h3>Data Gouvernance</h3>
-                            <p>Qualité, conformité et appropriation métier.</p>
-                        </article>
-                        <article data-reveal>
-                            <span>03</span>
-                            <h3>Analytics &amp; BI</h3>
-                            <p>Tables analytics, reporting et aide à la décision.</p>
-                        </article>
-                    </div>
+                <div class="domain-cards">
+                    <article data-reveal>
+                        <span>01</span>
+                        <h3>Engineering</h3>
+                        <p>Ingestion, transformation, modélisation et orchestration.</p>
+                    </article>
+                    <article data-reveal>
+                        <span>02</span>
+                        <h3>Gouvernance</h3>
+                        <p>Qualité, conformité et appropriation métier.</p>
+                    </article>
+                    <article data-reveal>
+                        <span>03</span>
+                        <h3>Analytics</h3>
+                        <p>Tables analytics, reporting et aide à la décision.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="section education" id="formation" aria-labelledby="formation-title">
-            <div class="container">
-                <div class="section-heading">
-                    <div class="section-marker" data-reveal>
+        <section class="education section" id="formation" aria-labelledby="formation-title">
+            <div class="container education-grid">
+                <div>
+                    <div class="section-label" data-reveal>
                         <span>04</span>
                         <p>Formation</p>
                     </div>
-                    <div>
-                        <p class="section-kicker" data-reveal>Diplômes</p>
-                        <h2 id="formation-title" data-reveal>
-                            Mathématiques,
-                            <span>data et ingénierie.</span>
-                        </h2>
-                    </div>
+                    <p class="eyebrow" data-reveal>Diplômes</p>
+                    <h2 id="formation-title" data-reveal>Formation.</h2>
                 </div>
 
                 <div class="education-list">
                     <article data-reveal>
                         <span class="education-year">2018 — 2019</span>
-                        <div>
-                            <h3>Mastère Spécialisé Big Data</h3>
-                            <p>Grenoble École de Management · Grenoble-INP Ensimag</p>
-                            <span>Grenoble, France</span>
-                        </div>
+                        <h3>Mastère Spécialisé Big Data</h3>
+                        <p>Grenoble École de Management · Grenoble-INP Ensimag</p>
+                        <span>Grenoble, France</span>
                     </article>
                     <article data-reveal>
                         <span class="education-year">2017 — 2018</span>
-                        <div>
-                            <h3>Master 2 Mathématiques et Applications</h3>
-                            <p>Aix-Marseille Université</p>
-                            <span>Marseille, France</span>
-                        </div>
+                        <h3>Master 2 Mathématiques et Applications</h3>
+                        <p>Aix-Marseille Université</p>
+                        <span>Marseille, France</span>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section contact" id="contact" aria-labelledby="contact-title">
-            <div class="container section-grid">
-                <div class="section-marker section-marker-light" data-reveal>
-                    <span>05</span>
-                    <p>Contact</p>
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-top">
+                    <div class="section-label section-label-light" data-reveal>
+                        <span>05</span>
+                        <p>Contact</p>
+                    </div>
+                    <p data-reveal>Disponible pour échanger autour d’un projet ou d’une opportunité data.</p>
                 </div>
 
-                <div class="section-content">
-                    <p class="section-kicker section-kicker-light" data-reveal>Échangeons</p>
-                    <h2 id="contact-title" data-reveal>
-                        Une opportunité,
-                        <span>un projet data ?</span>
-                    </h2>
-                    <a class="contact-email" href="mailto:david.ddelhaye@gmail.com" data-reveal>
-                        <span>david.ddelhaye@gmail.com</span>
-                        <span aria-hidden="true">↗</span>
-                    </a>
-                    <div class="contact-links" data-reveal>
-                        <a href="tel:+33672590422">
-                            <span>Téléphone</span>
-                            <strong>+33 6 72 59 04 22</strong>
-                        </a>
-                        <a href="https://www.linkedin.com/in/d-delhaye/" target="_blank" rel="noopener noreferrer">
-                            <span>LinkedIn</span>
-                            <strong>d-delhaye ↗</strong>
-                        </a>
-                        <a href="CV_DELHAYE.pdf" download>
-                            <span>Curriculum vitæ</span>
-                            <strong>Télécharger ↓</strong>
-                        </a>
-                    </div>
+                <h2 id="contact-title" data-reveal>Parlons data.</h2>
+
+                <a class="contact-email" href="mailto:david.ddelhaye@gmail.com" data-reveal>
+                    <span>david.ddelhaye@gmail.com</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+                <div class="contact-links" data-reveal>
+                    <a href="tel:+33672590422">+33 6 72 59 04 22</a>
+                    <a href="https://www.linkedin.com/in/d-delhaye/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="CV_DELHAYE.pdf" download>CV ↓</a>
                 </div>
             </div>
         </section>
