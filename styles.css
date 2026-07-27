@@ -124,25 +124,54 @@ img {
     min-height: 100svh;
     display: grid;
     place-content: center;
-    gap: 16px;
+    gap: 8px;
     text-align: center;
 }
 
-.page-loading span {
-    width: 42px;
-    height: 2px;
-    margin-inline: auto;
-    background: var(--accent);
-    animation: loading 1s ease-in-out infinite alternate;
+.page-loading {
+    padding: calc(var(--header-height) + 40px) 24px 40px;
 }
 
 .page-loading p {
     margin: 0;
+}
+
+.page-loading .launch-label {
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.page-loading .launch-name {
+    margin-top: 20px;
+    color: var(--ink);
+    font-size: clamp(54px, 10vw, 128px);
+    font-weight: 750;
+    line-height: 0.9;
+    letter-spacing: -0.075em;
+    text-transform: uppercase;
+}
+
+.page-loading .launch-role {
+    color: var(--accent);
+    font-size: clamp(20px, 2.5vw, 34px);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+}
+
+.page-loading a {
+    width: fit-content;
+    margin: 24px auto 0;
+    padding-bottom: 5px;
+    color: var(--accent);
+    border-bottom: 1px solid currentColor;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .noscript-message {
@@ -153,12 +182,6 @@ img {
 .noscript-message a {
     color: var(--accent);
     text-decoration: underline;
-}
-
-@keyframes loading {
-    to {
-        width: 92px;
-    }
 }
 
 /* Header */

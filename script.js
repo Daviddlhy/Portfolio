@@ -1,4 +1,4 @@
-import { profile } from "./data/profile.js";
+const profile = window.portfolioProfile;
 
 const escapeHtml = (value) =>
     String(value)
@@ -327,7 +327,11 @@ const initializeTheme = () => {
     toggle?.addEventListener("click", () => {
         const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
         document.documentElement.dataset.theme = nextTheme;
-        localStorage.setItem("portfolio-theme", nextTheme);
+        try {
+            localStorage.setItem("portfolio-theme", nextTheme);
+        } catch {
+            // Le thème reste actif même si le stockage local est indisponible.
+        }
         updateThemeUI();
     });
 
@@ -417,10 +421,17 @@ const initializeReveals = () => {
     });
 };
 
-renderPortfolio();
-initializeTheme();
-initializeNavigation();
-initializeReveals();
+if (profile) {
+    renderPortfolio();
+    initializeTheme();
+    initializeNavigation();
+    initializeReveals();
 
-const year = document.querySelector("[data-year]");
-if (year) year.textContent = String(new Date().getFullYear());
+    const year = document.querySelector("[data-year]");
+    if (year) year.textContent = String(new Date().getFullYear());
+} else {
+    const fallback = document.querySelector(".page-loading");
+    fallback?.setAttribute("aria-live", "assertive");
+    const label = fallback?.querySelector(".launch-label");
+    if (label) label.textContent = "Le contenu n’a pas pu être chargé";
+}

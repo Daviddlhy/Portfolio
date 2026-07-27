@@ -22,10 +22,16 @@
     <link rel="icon" type="image/png" href="og-circle-blue.png">
     <link rel="preload" href="assets/profile.jpeg" as="image">
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="script.js"></script>
+    <script src="data/profile.js" defer></script>
+    <script src="script.js" defer></script>
     <script>
         (() => {
-            const savedTheme = localStorage.getItem("portfolio-theme");
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem("portfolio-theme");
+            } catch {
+                // L’ouverture directe du fichier peut désactiver le stockage local.
+            }
             const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
             document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
         })();
@@ -86,8 +92,10 @@
 
     <main id="contenu">
         <div class="page-loading" role="status" aria-live="polite">
-            <span></span>
-            <p>Chargement du portfolio…</p>
+            <p class="launch-label">Portfolio · 2026</p>
+            <p class="launch-name">David Delhaye</p>
+            <p class="launch-role">Data Engineer</p>
+            <a href="CV_DELHAYE.pdf">Consulter le CV ↗</a>
         </div>
     </main>
 

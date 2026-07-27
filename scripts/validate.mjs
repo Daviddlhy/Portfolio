@@ -1,9 +1,13 @@
 import { access, readFile } from "node:fs/promises";
-import { profile } from "../data/profile.js";
+import { runInNewContext } from "node:vm";
 
 const projectRoot = new URL("../", import.meta.url);
 const html = await readFile(new URL("index.html", projectRoot), "utf8");
 const script = await readFile(new URL("script.js", projectRoot), "utf8");
+const profileSource = await readFile(new URL("data/profile.js", projectRoot), "utf8");
+const profileContext = { window: {} };
+runInNewContext(profileSource, profileContext);
+const profile = profileContext.window.portfolioProfile;
 
 const requiredFiles = [
     "CV_DELHAYE.pdf",

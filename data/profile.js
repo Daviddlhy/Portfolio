@@ -26,7 +26,8 @@
  * missingInformation: string[]
  * }}
  */
-export const profile = {
+(() => {
+const profile = {
     name: "David Delhaye",
     title: "Data Engineer",
     location: "Île-de-France",
@@ -221,3 +222,6 @@ export const profile = {
         "Profil GitHub",
     ],
 };
+
+window.portfolioProfile = profile;
+})();
