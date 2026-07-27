@@ -11,7 +11,7 @@ const sourceAssets = [
     { route: "/styles.css", file: "styles.css", type: "text/css; charset=utf-8" },
     { route: "/script.js", file: "script.js", type: "text/javascript; charset=utf-8" },
     { route: "/CV_DELHAYE.pdf", file: "CV_DELHAYE.pdf", type: "application/pdf" },
-    { route: "/og-minimal-blue.png", file: "og-minimal-blue.png", type: "image/png" },
+    { route: "/og-circle-blue.png", file: "og-circle-blue.png", type: "image/png" },
     { route: "/assets/profile.jpeg", file: "assets/profile.jpeg", type: "image/jpeg" },
 ];
 
@@ -56,8 +56,8 @@ export default {
             ? new TextDecoder()
                 .decode(decodeBase64(asset.body))
                 .replaceAll(
-                    'content="og-minimal-blue.png"',
-                    \`content="\${url.origin}/og-minimal-blue.png"\`,
+                    'content="og-circle-blue.png"',
+                    \`content="\${url.origin}/og-circle-blue.png"\`,
                 )
             : decodeBase64(asset.body);
 
