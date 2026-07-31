@@ -45,7 +45,7 @@ Cette commande démarre le serveur de développement. Ouvrez ensuite [http://loc
 
 Les modifications apparaissent automatiquement après l’enregistrement d’un fichier.
 
-Le portfolio ne se parcourt pas comme une page classique : utilisez la navigation latérale, les boutons **Vue précédente / Vue suivante** ou les flèches gauche et droite du clavier.
+Le portfolio se parcourt naturellement avec la molette ou le pavé tactile. La barre flottante permet d’atteindre directement une section et la ligne bleue placée sous cette barre indique la progression dans la page.
 
 ## 4. Arrêter le serveur
 
@@ -120,10 +120,10 @@ Mettez également à jour les valeurs correspondantes dans `contactItems` afin q
 Ouvrez `src/app/globals.css`. Au début du fichier, repérez :
 
 ```css
---signal: #ff5b35;
+--blue: #246bfd;
 ```
 
-Remplacez `#ff5b35` par le code de la couleur d’accent. Les autres variables permettent d’ajuster le noir, le crème et les gris de l’interface.
+Remplacez `#246bfd` par le code du bleu principal. Les autres variables permettent d’ajuster le bleu nuit, le bleu clair et la couleur de fond.
 
 ## 12. Remplacer le CV
 
@@ -215,7 +215,7 @@ git revert IDENTIFIANT
 
 - `src/data/content.ts` : toutes les informations affichées.
 - `src/app/globals.css` : couleurs et styles globaux.
-- `src/components/portfolio/PortfolioShell.tsx` : interface plein écran et interactions ; à modifier seulement si vous connaissez React.
+- `src/components/portfolio/FluidPortfolio.tsx` : mise en page, navigation et animations ; à modifier seulement si vous connaissez React.
 - `public/profile.jpeg` : photo de profil.
 - `public/CV_DELHAYE.pdf` : CV téléchargeable.
 - `package.json` : commandes et liste des dépendances.

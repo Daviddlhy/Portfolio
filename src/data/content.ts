@@ -59,7 +59,6 @@ export const navigation: NavigationItem[] = [
 
 export const interfaceLabels = {
   skipToContent: "Aller au contenu principal",
-  backHome: "David Delhaye — accueil",
   mainNavigation: "Navigation principale",
   mobileNavigation: "Navigation mobile",
   openMenu: "Ouvrir le menu",
@@ -70,17 +69,11 @@ export const interfaceLabels = {
   downloadCv: "Télécharger le CV",
   backToTop: "Retour en haut",
   availability: "Disponible pour de nouveaux projets",
-  heroEyebrow: "Data engineering · Cloud · Industrialisation",
-  experienceCount: "4 expériences",
+  experienceIntro: "Quatre expériences entre Data Engineering, Data Science et transmission.",
   skillsIntro: "Des outils choisis pour construire, automatiser et fiabiliser les plateformes data.",
   contactKicker: "Un projet data à structurer ?",
   contactHeadline: "Parlons data.",
   contactIntro: "Échangeons sur vos enjeux de plateforme, de migration ou d’industrialisation.",
-  previousSection: "Vue précédente",
-  nextSection: "Vue suivante",
-  sectionNavigation: "Navigation par vues",
-  keyboardHint: "Flèches gauche / droite",
-  selectExperience: "Sélectionner une expérience",
   projectsSoonTitle: "Projets personnels",
   projectsSoonMessage: "Cette section sera bientôt créée.",
   blogSoonTitle: "Blog & photographies",
@@ -88,10 +81,6 @@ export const interfaceLabels = {
   comingSoon: "Bientôt",
   profileStatementLead: "Je transforme les besoins data en systèmes",
   profileStatementAccent: "fiables et durables.",
-  skillsHeadingLead: "Stack",
-  skillsHeadingAccent: "& outils",
-  educationHeadingLead: "Formation",
-  educationHeadingAccent: "académique",
 };
 
 export const sectionContent = {

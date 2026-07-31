@@ -1,5 +1,5 @@
-import { PortfolioShell } from "@/components/portfolio/PortfolioShell";
+import { FluidPortfolio } from "@/components/portfolio/FluidPortfolio";
 
 export default function Home() {
-  return <PortfolioShell />;
+  return <FluidPortfolio />;
 }
