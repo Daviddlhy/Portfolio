@@ -4,13 +4,14 @@ import Image from "next/image";
 import {
   ArrowDownRight,
   ArrowUpRight,
+  ChevronDown,
   Download,
   Mail,
   MapPin,
   Menu,
   X,
 } from "lucide-react";
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   contactItems,
@@ -59,9 +60,9 @@ function SectionHeading({ index, title, intro, inverted = false }: SectionHeadin
     <Reveal className="grid gap-7 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
       <div>
         <p className={`font-mono text-[0.65rem] tracking-[0.16em] uppercase ${inverted ? "text-sky" : "text-blue"}`}>{index}</p>
-        <h2 className={`mt-5 text-[clamp(2.8rem,5.6vw,6rem)] leading-[0.9] font-semibold tracking-[-0.065em] ${inverted ? "text-white" : "text-blue-dark"}`}>{title}</h2>
+        <h2 className={`mt-5 text-[clamp(2.6rem,4.8vw,5rem)] leading-[0.92] font-semibold tracking-[-0.06em] ${inverted ? "text-white" : "text-blue-dark"}`}>{title}</h2>
       </div>
-      {intro ? <p className={`max-w-xl text-lg leading-8 lg:justify-self-end ${inverted ? "text-white/58" : "text-ink/58"}`}>{intro}</p> : null}
+      {intro ? <p className={`max-w-xl text-base leading-7 lg:justify-self-end ${inverted ? "text-white/58" : "text-ink/58"}`}>{intro}</p> : null}
     </Reveal>
   );
 }
@@ -133,15 +134,15 @@ function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="accueil" aria-labelledby="hero-title" className="blueprint-grid relative isolate min-h-screen overflow-hidden bg-blue-deep pt-32 pb-16 text-white sm:pt-36 lg:pt-40">
+    <section id="accueil" aria-labelledby="hero-title" className="blueprint-grid relative isolate overflow-hidden bg-blue-deep pt-32 pb-20 text-white sm:pt-36 lg:pt-40">
       <div aria-hidden="true" className="ambient-orb absolute -top-24 -left-24 size-80 rounded-full bg-blue/28 blur-3xl" />
       <div aria-hidden="true" className="ambient-orb-delayed absolute right-[4%] bottom-[5%] size-72 rounded-full bg-sky/14 blur-3xl" />
-      <div className="mx-auto grid min-h-[calc(100vh-12rem)] max-w-[1380px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-12">
+      <div className="mx-auto grid min-h-[72vh] max-w-[1380px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
         <div className="relative z-10">
           <motion.p initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">
             <span className="size-2 rounded-full bg-sky shadow-[0_0_18px_rgba(143,197,255,0.9)]" aria-hidden="true" />{interfaceLabels.availability}
           </motion.p>
-          <motion.h1 id="hero-title" initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="mt-9 text-[clamp(4.3rem,10vw,10.5rem)] leading-[0.74] font-semibold tracking-[-0.085em]">
+          <motion.h1 id="hero-title" initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="mt-9 text-[clamp(4rem,8.5vw,8.2rem)] leading-[0.76] font-semibold tracking-[-0.08em]">
             {titleLead}
             <span className="block font-serif font-normal text-sky italic">{titleAccent}</span>
           </motion.h1>
@@ -152,7 +153,7 @@ function Hero() {
           </motion.div>
         </div>
 
-        <motion.div animate={reduceMotion ? undefined : { y: [0, -12, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="relative mx-auto w-full max-w-[520px] lg:mx-0 lg:ml-auto">
+        <motion.div animate={reduceMotion ? undefined : { y: [0, -10, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="relative mx-auto w-full max-w-[440px] lg:mx-0 lg:ml-auto">
           <div aria-hidden="true" className="pulse-ring absolute -inset-5 rounded-[3rem] border border-sky/35" />
           <figure className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-blue-dark p-2 shadow-2xl shadow-black/35">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-blue">
@@ -190,20 +191,20 @@ function StackMarquee() {
 
 function About() {
   return (
-    <section id="a-propos" aria-labelledby="about-title" className="scroll-mt-28 bg-paper py-24 sm:py-32">
+    <section id="a-propos" aria-labelledby="about-title" className="scroll-mt-28 bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
         <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} />
-        <div className="mt-14 grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
           <Reveal>
             <p className="max-w-sm text-lg leading-8 text-ink/55">{profile.summary[1]}</p>
             <p className="mt-8 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-blue uppercase"><MapPin className="size-4" aria-hidden="true" />{profile.location} · {profile.workMode}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h3 id="about-title" className="text-[clamp(2.3rem,4.4vw,4.8rem)] leading-[1.02] font-medium tracking-[-0.055em] text-blue-dark">{interfaceLabels.profileStatementLead} <span className="font-serif font-normal text-blue italic">{interfaceLabels.profileStatementAccent}</span></h3>
-            <ul className="mt-12 grid gap-3 sm:grid-cols-3">
+            <h3 id="about-title" className="text-[clamp(2.2rem,3.8vw,4rem)] leading-[1.04] font-medium tracking-[-0.05em] text-blue-dark">{interfaceLabels.profileStatementLead} <span className="font-serif font-normal text-blue italic">{interfaceLabels.profileStatementAccent}</span></h3>
+            <ul className="mt-9 flex flex-wrap gap-2">
               {profileFocus.map((focus, index) => (
-                <motion.li key={focus} whileHover={reduceHover()} className="rounded-2xl border border-blue-dark/10 bg-white p-5 shadow-[0_8px_30px_rgba(7,26,56,0.06)]">
-                  <span className="font-mono text-[0.6rem] text-blue">0{index + 1}</span><p className="mt-7 text-lg font-semibold text-blue-dark">{focus}</p>
+                <motion.li key={focus} whileHover={{ y: -2 }} className="inline-flex items-center gap-3 rounded-full border border-blue-dark/12 bg-white px-4 py-2.5">
+                  <span className="font-mono text-[0.55rem] text-blue">0{index + 1}</span><span className="text-sm font-semibold text-blue-dark">{focus}</span>
                 </motion.li>
               ))}
             </ul>
@@ -214,30 +215,42 @@ function About() {
   );
 }
 
-function reduceHover() {
-  return { y: -4 };
-}
-
 function Experience() {
+  const [openExperience, setOpenExperience] = useState<number | null>(null);
+
   return (
-    <section id="experiences" aria-labelledby="experience-title" className="scroll-mt-28 bg-blue-soft py-24 sm:py-32">
+    <section id="experiences" aria-labelledby="experience-title" className="scroll-mt-28 bg-blue-soft py-20 sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
         <SectionHeading index={sectionContent.experience.index} title={sectionContent.experience.title} intro={interfaceLabels.experienceIntro} />
         <h3 id="experience-title" className="sr-only">{sectionContent.experience.title}</h3>
-        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 overflow-hidden rounded-[2rem] border border-blue-dark/10 bg-white shadow-[0_16px_45px_rgba(7,26,56,0.07)]">
           {experiences.map((experience, index) => (
-            <Reveal key={`${experience.company}-${experience.period}`} delay={(index % 2) * 0.08}>
-              <motion.article whileHover={{ y: -5 }} transition={{ duration: 0.25 }} className="h-full rounded-[2rem] border border-blue-dark/10 bg-white p-6 shadow-[0_16px_45px_rgba(7,26,56,0.08)] sm:p-8">
-                <div className="flex items-start justify-between gap-5">
-                  <div><p className="font-mono text-[0.62rem] tracking-[0.12em] text-blue uppercase">{experience.company}</p><h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-blue-dark sm:text-3xl">{experience.role}</h3></div>
-                  <span className="font-mono text-[0.6rem] text-blue-dark/30">0{index + 1}</span>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs text-ink/45"><span>{experience.period}</span><span className="flex items-center gap-1.5"><MapPin className="size-3.5 text-blue" aria-hidden="true" />{experience.location}</span></div>
-                <ul className="mt-7 space-y-3 border-t border-blue-dark/10 pt-6">
-                  {experience.missions.map((mission) => <li key={mission} className="grid grid-cols-[10px_1fr] gap-3 text-sm leading-6 text-ink/60 before:mt-[0.65rem] before:size-1.5 before:rounded-full before:bg-blue">{mission}</li>)}
-                </ul>
-              </motion.article>
-            </Reveal>
+            <article key={`${experience.company}-${experience.period}`} className="border-b border-blue-dark/10 last:border-b-0">
+              <button
+                type="button"
+                aria-expanded={openExperience === index}
+                aria-controls={`experience-details-${index}`}
+                onClick={() => setOpenExperience((current) => current === index ? null : index)}
+                className="group grid w-full gap-5 p-5 text-left transition-colors hover:bg-blue-soft/35 sm:grid-cols-[50px_0.8fr_1.2fr_auto] sm:items-center sm:p-6"
+              >
+                <span className="font-mono text-[0.58rem] text-blue">0{index + 1}</span>
+                <div><p className="text-[0.62rem] font-semibold tracking-[0.1em] text-blue uppercase">{experience.company}</p><p className="mt-1 text-xs text-ink/42">{experience.period}</p></div>
+                <div><h3 className="text-xl font-semibold tracking-[-0.025em] text-blue-dark">{experience.role}</h3><p className="mt-1 flex items-center gap-1.5 text-xs text-ink/42"><MapPin className="size-3 text-blue" aria-hidden="true" />{experience.location}</p></div>
+                <span className="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.06em] text-blue uppercase">
+                  <span className="hidden lg:inline">{openExperience === index ? interfaceLabels.hideMissions : interfaceLabels.showMissions}</span>
+                  <ChevronDown className={`size-4 transition-transform duration-300 ${openExperience === index ? "rotate-180" : ""}`} aria-hidden="true" />
+                </span>
+              </button>
+              <AnimatePresence initial={false}>
+                {openExperience === index ? (
+                  <motion.div id={`experience-details-${index}`} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden">
+                    <ul className="grid gap-x-10 gap-y-3 border-t border-blue-dark/10 bg-blue-soft/25 px-5 py-6 sm:grid-cols-2 sm:px-6">
+                      {experience.missions.map((mission) => <li key={mission} className="grid grid-cols-[9px_1fr] gap-3 text-sm leading-6 text-ink/58 before:mt-[0.65rem] before:size-1.5 before:rounded-full before:bg-blue">{mission}</li>)}
+                    </ul>
+                  </motion.div>
+                ) : null}
+              </AnimatePresence>
+            </article>
           ))}
         </div>
       </div>
@@ -247,17 +260,17 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="competences" aria-labelledby="skills-title" className="blueprint-grid scroll-mt-28 bg-blue-dark py-24 text-white sm:py-32">
+    <section id="competences" aria-labelledby="skills-title" className="blueprint-grid scroll-mt-28 bg-blue-dark py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
         <SectionHeading index={sectionContent.skills.index} title={sectionContent.skills.title} intro={interfaceLabels.skillsIntro} inverted />
         <h3 id="skills-title" className="sr-only">{sectionContent.skills.title}</h3>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid border-t border-white/15 lg:grid-cols-2 lg:gap-x-12">
           {skills.map((category, index) => (
             <Reveal key={category.name} delay={index * 0.05}>
-              <motion.article whileHover={{ y: -6, borderColor: "rgba(143,197,255,0.75)" }} className="min-h-64 rounded-2xl border border-white/14 bg-white/[0.055] p-6 backdrop-blur-sm">
-                <span className="font-mono text-[0.6rem] text-sky">0{index + 1}</span><h3 className="mt-10 text-xl font-semibold">{category.name}</h3>
-                <ul className="mt-6 space-y-2 text-sm text-white/55">{category.items.map((item) => <li key={item}>{item}</li>)}</ul>
-              </motion.article>
+              <article className="grid gap-4 border-b border-white/15 py-6 sm:grid-cols-[0.7fr_1.3fr] sm:items-center">
+                <div className="flex items-center gap-3"><span className="font-mono text-[0.58rem] text-sky">0{index + 1}</span><h3 className="text-lg font-semibold">{category.name}</h3></div>
+                <ul className="flex flex-wrap gap-2">{category.items.map((item) => <li key={item} className="rounded-full border border-white/15 bg-white/[0.045] px-3 py-1.5 text-xs text-white/62">{item}</li>)}</ul>
+              </article>
             </Reveal>
           ))}
         </div>
@@ -266,18 +279,27 @@ function Skills() {
   );
 }
 
-type SoonSectionProps = { id: string; index: string; title: string; message: string; dark?: boolean };
-
-function SoonSection({ id, index, title, message, dark = false }: SoonSectionProps) {
+function FutureSpaces() {
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className={`soft-grid relative scroll-mt-28 overflow-hidden py-24 sm:py-32 ${dark ? "bg-blue-deep text-white" : "bg-paper text-blue-dark"}`}>
-      <div aria-hidden="true" className={`ambient-orb absolute right-[8%] top-1/2 size-56 -translate-y-1/2 rounded-full border ${dark ? "border-sky/25" : "border-blue/20"}`} />
-      <div className="relative mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <Reveal>
-          <p className={`font-mono text-[0.65rem] tracking-[0.16em] uppercase ${dark ? "text-sky" : "text-blue"}`}>{index} · {interfaceLabels.comingSoon}</p>
-          <h2 id={`${id}-title`} className="mt-7 max-w-5xl text-[clamp(3.5rem,7.8vw,8rem)] leading-[0.84] font-semibold tracking-[-0.075em]">{title}</h2>
-          <p className={`mt-9 max-w-xl border-l-2 border-blue pl-5 text-lg leading-8 ${dark ? "text-white/55" : "text-ink/55"}`}>{message}</p>
-        </Reveal>
+    <section aria-labelledby="future-spaces-title" className="soft-grid bg-paper py-20 sm:py-28">
+      <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
+        <Reveal><p className="font-mono text-[0.65rem] tracking-[0.16em] text-blue uppercase">{sectionContent.projects.index}—{sectionContent.journal.index}</p><h2 id="future-spaces-title" className="mt-5 text-[clamp(2.6rem,4.8vw,5rem)] leading-[0.92] font-semibold tracking-[-0.06em] text-blue-dark">{interfaceLabels.futureSpacesTitle}</h2></Reveal>
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <Reveal>
+            <article id="projets" className="scroll-mt-28 rounded-[2rem] border border-blue-dark/10 bg-white p-7 sm:p-9">
+              <p className="font-mono text-[0.62rem] tracking-[0.14em] text-blue uppercase">{sectionContent.projects.index} · {interfaceLabels.comingSoon}</p>
+              <h3 className="mt-5 text-3xl font-semibold tracking-[-0.045em] text-blue-dark sm:text-4xl">{interfaceLabels.projectsSoonTitle}</h3>
+              <p className="mt-5 text-base text-ink/52">{interfaceLabels.projectsSoonMessage}</p>
+            </article>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <article id="journal" className="blueprint-grid scroll-mt-28 rounded-[2rem] bg-blue-dark p-7 text-white sm:p-9">
+              <p className="font-mono text-[0.62rem] tracking-[0.14em] text-sky uppercase">{sectionContent.journal.index} · {interfaceLabels.comingSoon}</p>
+              <h3 className="mt-5 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{interfaceLabels.blogSoonTitle}</h3>
+              <p className="mt-5 text-base text-white/52">{interfaceLabels.blogSoonMessage}</p>
+            </article>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -313,7 +335,7 @@ function Contact() {
       <div className="mx-auto grid max-w-[1380px] gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-12">
         <Reveal>
           <p className="font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">{sectionContent.contact.index} · {interfaceLabels.contactKicker}</p>
-          <h2 id="contact-title" className="mt-7 text-[clamp(4rem,9vw,9rem)] leading-[0.76] font-semibold tracking-[-0.085em]">{contactLead}<span className="block font-serif font-normal text-sky italic">{contactAccent}</span></h2>
+          <h2 id="contact-title" className="mt-7 text-[clamp(3.8rem,8vw,7.5rem)] leading-[0.78] font-semibold tracking-[-0.08em]">{contactLead}<span className="block font-serif font-normal text-sky italic">{contactAccent}</span></h2>
           <p className="mt-9 max-w-xl text-lg leading-8 text-white/55">{interfaceLabels.contactIntro}</p>
         </Reveal>
         <Reveal delay={0.1} className="self-end">
@@ -341,8 +363,7 @@ export function FluidPortfolio() {
         <About />
         <Experience />
         <Skills />
-        <SoonSection id="projets" index={sectionContent.projects.index} title={interfaceLabels.projectsSoonTitle} message={interfaceLabels.projectsSoonMessage} />
-        <SoonSection id="journal" index={sectionContent.journal.index} title={interfaceLabels.blogSoonTitle} message={interfaceLabels.blogSoonMessage} dark />
+        <FutureSpaces />
         <Education />
         <Contact />
       </main>

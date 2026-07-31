@@ -79,6 +79,9 @@ export const interfaceLabels = {
   blogSoonTitle: "Blog & photographies",
   blogSoonMessage: "Cette section sera bientôt créée.",
   comingSoon: "Bientôt",
+  futureSpacesTitle: "À venir",
+  showMissions: "Voir les missions",
+  hideMissions: "Masquer les missions",
   profileStatementLead: "Je transforme les besoins data en systèmes",
   profileStatementAccent: "fiables et durables.",
 };

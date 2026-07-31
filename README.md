@@ -47,6 +47,8 @@ Les modifications apparaissent automatiquement après l’enregistrement d’un 
 
 Le portfolio se parcourt naturellement avec la molette ou le pavé tactile. La barre flottante permet d’atteindre directement une section et la ligne bleue placée sous cette barre indique la progression dans la page.
 
+Dans le parcours professionnel, les missions restent repliées par défaut. Cliquez sur une expérience pour afficher ou masquer son détail.
+
 ## 4. Arrêter le serveur
 
 Revenez dans le terminal où le serveur fonctionne, puis appuyez sur :
