@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <a
         href="#contenu"
-        className="fixed top-3 left-3 z-[100] -translate-y-24 bg-brand px-4 py-2 font-semibold text-white transition-transform focus:translate-y-0"
+        className="fixed top-3 left-3 z-[100] -translate-y-24 rounded-full bg-brand px-4 py-2 font-semibold text-white transition-transform focus:translate-y-0"
       >
         {interfaceLabels.skipToContent}
       </a>

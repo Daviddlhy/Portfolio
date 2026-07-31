@@ -12,18 +12,18 @@ export function SectionTitle({
   inverted = false,
 }: SectionTitleProps) {
   return (
-    <div className="space-y-5">
+    <div className="grid gap-4 sm:grid-cols-[90px_1fr] sm:items-start">
       <p
-        className={`font-mono text-xs font-semibold tracking-[0.18em] uppercase ${
-          inverted ? "text-sky-300" : "text-brand"
+        className={`pt-2 font-mono text-[0.68rem] font-semibold tracking-[0.18em] uppercase ${
+          inverted ? "text-white/55" : "text-brand"
         }`}
       >
-        {index} / {title}
+        ({index})
       </p>
       <h2
         id={id}
-        className={`max-w-3xl text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-5xl lg:text-6xl ${
-          inverted ? "text-white" : "text-navy"
+        className={`max-w-4xl text-[clamp(2.8rem,6vw,6.4rem)] leading-[0.88] font-semibold tracking-[-0.065em] text-balance ${
+          inverted ? "text-white" : "text-ink"
         }`}
       >
         {title}

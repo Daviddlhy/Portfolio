@@ -108,10 +108,10 @@ Mettez également à jour les valeurs correspondantes dans `contactItems` afin q
 Ouvrez `src/app/globals.css`. Au début du fichier, repérez :
 
 ```css
---brand: #0078d4;
+--brand: #2257ff;
 ```
 
-Remplacez `#0078d4` par le code de la nouvelle couleur. Un code hexadécimal commence par `#` et contient six caractères.
+Remplacez `#2257ff` par le code de la nouvelle couleur. Les autres variables placées juste en dessous permettent aussi d’ajuster le noir encre, le fond ivoire et le rose utilisé autour du portrait.
 
 ## 10. Remplacer le CV
 

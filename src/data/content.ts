@@ -66,6 +66,13 @@ export const interfaceLabels = {
   mainStack: "Stack principale",
   downloadCv: "Télécharger le CV",
   backToTop: "Retour en haut",
+  availability: "Disponible pour de nouveaux projets",
+  heroEyebrow: "Data engineering · Cloud · Industrialisation",
+  experienceCount: "4 expériences",
+  skillsIntro: "Des outils choisis pour construire, automatiser et fiabiliser les plateformes data.",
+  contactKicker: "Un projet data à structurer ?",
+  contactHeadline: "Parlons data.",
+  contactIntro: "Échangeons sur vos enjeux de plateforme, de migration ou d’industrialisation.",
 };
 
 export const sectionContent = {
