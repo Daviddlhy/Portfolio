@@ -15,6 +15,7 @@ export const profile: Profile = {
   summary: [
     "Issu d’un parcours en Data Science et BI, je me suis spécialisé en Data Engineering autour des technologies Azure et Snowflake.",
     "J’interviens sur l’industrialisation des traitements, les pipelines de données et l’automatisation des déploiements.",
+    "Ainsi que sur l'automatisation de la data gouvernance et la fiabilisation des indicateurs.",
   ],
   location: "Île-de-France",
   workMode: "Télétravail ou présentiel",
@@ -175,7 +176,7 @@ export const skills: SkillCategory[] = [
 // FORMATIONS
 export const education: Education[] = [
   {
-    degree: "Mastère Spécialisé Big Data (parcours académique validé)",
+    degree: "Mastère Spécialisé Big Data",
     school: "Grenoble École de Management - Grenoble-INP Ensimag",
     location: "Grenoble, France",
     period: "De 2018 à 2019",
