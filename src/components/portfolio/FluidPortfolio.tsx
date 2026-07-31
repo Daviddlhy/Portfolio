@@ -32,34 +32,10 @@ import {
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  delay?: number;
 };
 
-function Reveal({ children, className = "", delay = 0 }: RevealProps) {
-  const reduceMotion = useReducedMotion();
-  const [animationsReady, setAnimationsReady] = useState(false);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => setAnimationsReady(true));
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
-
-  return (
-    <motion.div
-      className={className}
-      initial={false}
-      animate={animationsReady && !reduceMotion ? "hidden" : "visible"}
-      whileInView="visible"
-      variants={{
-        hidden: { opacity: 0, y: 34 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
+function Reveal({ children, className = "" }: RevealProps) {
+  return <div className={className}>{children}</div>;
 }
 
 type SectionHeadingProps = {
@@ -204,7 +180,7 @@ function About() {
             ))}
             <p className="mt-8 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-blue uppercase"><MapPin className="size-4" aria-hidden="true" />{profile.location} · {profile.workMode}</p>
           </Reveal>
-          <Reveal delay={0.08}>
+          <Reveal>
             <h3 id="about-title" className="text-[clamp(2.2rem,3.8vw,4rem)] leading-[1.04] font-medium tracking-[-0.05em] text-white">{interfaceLabels.profileStatementLead} <span className="font-serif font-normal text-sky italic">{interfaceLabels.profileStatementAccent}</span></h3>
             <ul className="mt-9 flex flex-wrap gap-2">
               {profileFocus.map((focus, index) => (
@@ -271,7 +247,7 @@ function Skills() {
         <h3 id="skills-title" className="sr-only">{sectionContent.skills.title}</h3>
         <div className="mt-12 grid border-t border-white/15 lg:grid-cols-2 lg:gap-x-12">
           {skills.map((category, index) => (
-            <Reveal key={category.name} delay={index * 0.05}>
+            <Reveal key={category.name}>
               <article className="grid gap-4 border-b border-white/15 py-6 sm:grid-cols-[0.7fr_1.3fr] sm:items-center">
                 <div className="flex items-center gap-3"><span className="font-mono text-[0.58rem] text-sky">0{index + 1}</span><h3 className="text-lg font-semibold">{category.name}</h3></div>
                 <ul className="flex flex-wrap gap-2">{category.items.map((item) => <li key={item} className="rounded-full border border-white/15 bg-white/[0.045] px-3 py-1.5 text-xs text-white/62">{item}</li>)}</ul>
@@ -308,7 +284,7 @@ function JapanTravel() {
 
         <div className="mt-10 grid gap-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           {japanTravel.photos.map((photo, index) => (
-            <Reveal key={photo.src} delay={index * 0.1} className={index === 0 ? "lg:mt-12" : ""}>
+            <Reveal key={photo.src} className={index === 0 ? "lg:mt-12" : ""}>
               <motion.figure whileHover={{ y: -5 }} transition={{ duration: 0.25 }} className="group overflow-hidden rounded-[2rem] border border-white/12 bg-blue-dark p-2">
                 <div className={`relative overflow-hidden rounded-[1.55rem] ${index === 0 ? "aspect-[3/4] lg:aspect-auto lg:h-[clamp(18rem,38vh,28rem)]" : "aspect-[4/5] lg:aspect-auto lg:h-[clamp(22rem,48vh,34rem)]"}`}>
                   <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 92vw, 48vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
@@ -331,7 +307,7 @@ function Education() {
         <h3 id="education-title" className="sr-only">{sectionContent.education.title}</h3>
         <div className="mt-14 border-t border-white/15">
           {education.map((item, index) => (
-            <Reveal key={item.degree} delay={index * 0.08}>
+            <Reveal key={item.degree}>
               <article className="grid gap-5 border-b border-white/15 py-8 transition-[padding,background-color] hover:bg-blue/10 sm:grid-cols-[70px_1fr_180px] sm:gap-8 sm:hover:px-5">
                 <span className="font-mono text-[0.6rem] text-sky">0{index + 1}</span>
                 <div><p className="text-xs font-semibold tracking-[0.1em] text-sky uppercase">{item.period}</p><h3 className="mt-3 max-w-3xl text-xl font-semibold tracking-[-0.025em] text-white sm:text-2xl">{item.degree}</h3><p className="mt-3 text-sm text-white/52">{item.school}</p></div>
@@ -356,7 +332,7 @@ function Contact() {
           <h2 id="contact-title" className="mt-7 text-[clamp(3.8rem,8vw,7.5rem)] leading-[0.78] font-semibold tracking-[-0.08em]">{contactLead}<span className="block font-serif font-normal text-sky italic">{contactAccent}</span></h2>
           <p className="mt-9 max-w-xl text-lg leading-8 text-white/55">{interfaceLabels.contactIntro}</p>
         </Reveal>
-        <Reveal delay={0.1} className="self-end">
+        <Reveal className="self-end">
           <a href={`mailto:${profile.email}`} className="group flex items-center justify-between gap-5 rounded-2xl bg-blue p-5 text-lg font-semibold transition-colors hover:bg-[#397cff] sm:text-xl"><span className="overflow-wrap-anywhere">{profile.email}</span><Mail className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" /></a>
           <div className="mt-5 border-t border-white/15">
             {contactItems.map((item) => {
