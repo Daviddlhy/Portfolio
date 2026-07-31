@@ -5,6 +5,8 @@ import { Contact } from "@/components/sections/Contact";
 import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
 import { Hero } from "@/components/sections/Hero";
+import { Journal } from "@/components/sections/Journal";
+import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { interfaceLabels } from "@/data/content";
 
@@ -23,6 +25,8 @@ export default function Home() {
         <About />
         <Experience />
         <Skills />
+        <Projects />
+        <Journal />
         <Education />
         <Contact />
       </main>

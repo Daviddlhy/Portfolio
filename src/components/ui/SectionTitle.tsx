@@ -5,26 +5,15 @@ type SectionTitleProps = {
   inverted?: boolean;
 };
 
-export function SectionTitle({
-  id,
-  index,
-  title,
-  inverted = false,
-}: SectionTitleProps) {
+export function SectionTitle({ id, index, title, inverted = false }: SectionTitleProps) {
   return (
-    <div className="grid gap-4 sm:grid-cols-[90px_1fr] sm:items-start">
-      <p
-        className={`pt-2 font-mono text-[0.68rem] font-semibold tracking-[0.18em] uppercase ${
-          inverted ? "text-white/55" : "text-brand"
-        }`}
-      >
-        ({index})
+    <div className={`border-t pt-6 ${inverted ? "border-white/20" : "border-ink/20"}`}>
+      <p className={`font-mono text-[0.64rem] tracking-[0.18em] uppercase ${inverted ? "text-white/50" : "text-brand-dark"}`}>
+        {index}
       </p>
       <h2
         id={id}
-        className={`max-w-4xl text-[clamp(2.8rem,6vw,6.4rem)] leading-[0.88] font-semibold tracking-[-0.065em] text-balance ${
-          inverted ? "text-white" : "text-ink"
-        }`}
+        className={`mt-8 max-w-3xl text-[clamp(2.5rem,5vw,5rem)] leading-[0.95] font-normal tracking-[-0.055em] ${inverted ? "text-white" : "text-ink"}`}
       >
         {title}
       </h2>

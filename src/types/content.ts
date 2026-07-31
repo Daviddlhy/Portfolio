@@ -29,6 +29,26 @@ export type SkillCategory = {
   items: string[];
 };
 
+export type PersonalProject = {
+  title: string;
+  status: string;
+  description: string;
+  themes: string[];
+  image?: string;
+  imageAlt?: string;
+  href?: string;
+};
+
+export type JournalFormat = {
+  kind: string;
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  date?: string;
+  href?: string;
+};
+
 export type Education = {
   degree: string;
   school: string;

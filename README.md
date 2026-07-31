@@ -90,7 +90,26 @@ items: ["Docker", "Azure DevOps", "Azure Pipelines", "Git"],
 
 Supprimez la compétence avec ses guillemets et la virgule voisine. Ne supprimez pas les crochets `[` et `]`.
 
-## 8. Modifier les coordonnées
+## 8. Ajouter un projet personnel
+
+Dans `src/data/content.ts`, repérez le tableau `personalProjects`. Chaque projet peut contenir un titre, un statut, une description et une liste de thèmes.
+
+Pour ajouter une image, placez le fichier dans `public`, puis ajoutez ces deux lignes dans le projet :
+
+```ts
+image: "/mon-projet.jpg",
+imageAlt: "Description de l’image",
+```
+
+Vous pouvez aussi ajouter `href: "https://..."` lorsqu’une démonstration ou un dépôt est disponible.
+
+## 9. Ajouter une note ou une photo au journal
+
+Dans `src/data/content.ts`, repérez `journalFormats`. Les trois formats proposés peuvent être remplacés par de vrais articles. Pour afficher une photo, placez-la dans `public`, puis renseignez `image` et `imageAlt` comme pour un projet. Ajoutez `date` et `href` lorsqu’un article est publié.
+
+Le format recommandé est un journal hybride : retours techniques courts, journaux de construction plus détaillés et séries photo personnelles.
+
+## 10. Modifier les coordonnées
 
 Dans `src/data/content.ts`, repérez `profile` et `contactItems`.
 
@@ -103,17 +122,17 @@ Dans `src/data/content.ts`, repérez `profile` et `contactItems`.
 
 Mettez également à jour les valeurs correspondantes dans `contactItems` afin que les liens et les textes affichés restent identiques.
 
-## 9. Changer la couleur principale
+## 11. Changer la couleur principale
 
 Ouvrez `src/app/globals.css`. Au début du fichier, repérez :
 
 ```css
---brand: #2257ff;
+--brand: #77836f;
 ```
 
-Remplacez `#2257ff` par le code de la nouvelle couleur. Les autres variables placées juste en dessous permettent aussi d’ajuster le noir encre, le fond ivoire et le rose utilisé autour du portrait.
+Remplacez `#77836f` par le code de la nouvelle couleur. Les autres variables permettent d’ajuster le noir encre, le fond ivoire, le sable et la teinte bois.
 
-## 10. Remplacer le CV
+## 12. Remplacer le CV
 
 1. Préparez le nouveau CV au format PDF.
 2. Nommez-le exactement `CV_DELHAYE.pdf`.
@@ -122,7 +141,7 @@ Remplacez `#2257ff` par le code de la nouvelle couleur. Les autres variables pla
 
 Le lien `/CV_DELHAYE.pdf` continuera ainsi de fonctionner sans modifier le code.
 
-## 11. Vérifier le site avant publication
+## 13. Vérifier le site avant publication
 
 Exécutez d’abord le contrôle du code :
 
@@ -146,7 +165,7 @@ npm run build
 
 La publication est prête lorsque les trois commandes se terminent sans erreur.
 
-## 12. Déployer sur Vercel
+## 14. Déployer sur Vercel
 
 La méthode la plus simple passe par GitHub :
 
@@ -159,7 +178,7 @@ La méthode la plus simple passe par GitHub :
 
 Chaque mise à jour envoyée sur la branche de production déclenchera ensuite un nouveau déploiement. La procédure officielle est détaillée dans la [documentation Vercel](https://vercel.com/docs/git).
 
-## 13. Récupérer de futures modifications avec Git
+## 15. Récupérer de futures modifications avec Git
 
 Vérifiez d’abord la branche active :
 
@@ -175,7 +194,7 @@ git pull
 
 `git pull` télécharge puis applique les nouveaux changements. Enregistrez ou validez vos modifications locales avant cette commande pour éviter les conflits.
 
-## 14. Revenir en arrière en cas d’erreur
+## 16. Revenir en arrière en cas d’erreur
 
 Pour annuler les modifications non enregistrées dans Git sur le fichier de contenu :
 

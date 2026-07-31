@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* PALETTE : ces variables pilotent toute la direction artistique. */
-  --brand: #2257ff;
-  --brand-dark: #173bb2;
-  --ink: #171918;
-  --ink-soft: #313431;
-  --paper: #f2efe7;
-  --paper-deep: #e6e1d5;
-  --rose: #c98283;
+  /* PALETTE JAPANDI : sauge, encre, papier et bois clair. */
+  --brand: #77836f;
+  --brand-dark: #4f5a49;
+  --ink: #272923;
+  --ink-soft: #4b4e46;
+  --paper: #f5f3ed;
+  --paper-deep: #e9e5dc;
+  --sand: #d7cbb9;
+  --wood: #a57f5f;
 }
 
 @theme inline {
@@ -18,15 +19,14 @@
   --color-ink-soft: var(--ink-soft);
   --color-paper: var(--paper);
   --color-paper-deep: var(--paper-deep);
-  --color-rose: var(--rose);
-  --font-sans: Arial, Helvetica, ui-sans-serif, sans-serif;
+  --color-sand: var(--sand);
+  --color-wood: var(--wood);
+  --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -43,38 +43,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-  color: #ffffff;
-  background: var(--brand);
-}
+::selection { color: #ffffff; background: var(--brand-dark); }
 
-:focus-visible {
-  outline: 3px solid var(--brand);
-  outline-offset: 4px;
-}
+:focus-visible { outline: 2px solid var(--brand-dark); outline-offset: 4px; }
 
-.paper-noise {
-  background-image: radial-gradient(rgba(23, 25, 24, 0.13) 0.55px, transparent 0.55px);
-  background-size: 5px 5px;
-}
-
-.outline-text {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.42);
-}
-
-.overflow-wrap-anywhere {
-  overflow-wrap: anywhere;
-}
+.overflow-wrap-anywhere { overflow-wrap: anywhere; }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
