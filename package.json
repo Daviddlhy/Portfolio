@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "brave": "node scripts/open-brave.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
