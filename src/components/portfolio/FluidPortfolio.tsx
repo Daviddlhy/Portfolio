@@ -19,6 +19,7 @@ import {
   experiences,
   footerContent,
   interfaceLabels,
+  japanTravel,
   navigation,
   profile,
   profileFocus,
@@ -171,24 +172,6 @@ function Hero() {
   );
 }
 
-function StackMarquee() {
-  return (
-    <div className="marquee overflow-hidden border-y border-blue-dark/10 bg-white py-5" aria-label={interfaceLabels.mainStack}>
-      <div className="marquee-track">
-        {[0, 1].map((copy) => (
-          <ul key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center">
-            {profile.stack.map((item) => (
-              <li key={`${copy}-${item}`} className="flex items-center gap-6 pr-6 text-sm font-semibold tracking-[0.06em] text-blue-dark uppercase sm:text-base">
-                {item}<span className="size-2 rounded-full bg-blue" aria-hidden="true" />
-              </li>
-            ))}
-          </ul>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function About() {
   return (
     <section id="a-propos" aria-labelledby="about-title" className="scroll-mt-28 bg-paper py-20 sm:py-28">
@@ -279,26 +262,39 @@ function Skills() {
   );
 }
 
-function FutureSpaces() {
+function ProjectsSoon() {
   return (
-    <section aria-labelledby="future-spaces-title" className="soft-grid bg-paper py-20 sm:py-28">
+    <section id="projets" aria-labelledby="projects-title" className="soft-grid scroll-mt-28 bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <Reveal><p className="font-mono text-[0.65rem] tracking-[0.16em] text-blue uppercase">{sectionContent.projects.index}—{sectionContent.journal.index}</p><h2 id="future-spaces-title" className="mt-5 text-[clamp(2.6rem,4.8vw,5rem)] leading-[0.92] font-semibold tracking-[-0.06em] text-blue-dark">{interfaceLabels.futureSpacesTitle}</h2></Reveal>
-        <div className="mt-10 grid gap-4 lg:grid-cols-2">
-          <Reveal>
-            <article id="projets" className="scroll-mt-28 rounded-[2rem] border border-blue-dark/10 bg-white p-7 sm:p-9">
-              <p className="font-mono text-[0.62rem] tracking-[0.14em] text-blue uppercase">{sectionContent.projects.index} · {interfaceLabels.comingSoon}</p>
-              <h3 className="mt-5 text-3xl font-semibold tracking-[-0.045em] text-blue-dark sm:text-4xl">{interfaceLabels.projectsSoonTitle}</h3>
-              <p className="mt-5 text-base text-ink/52">{interfaceLabels.projectsSoonMessage}</p>
-            </article>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <article id="journal" className="blueprint-grid scroll-mt-28 rounded-[2rem] bg-blue-dark p-7 text-white sm:p-9">
-              <p className="font-mono text-[0.62rem] tracking-[0.14em] text-sky uppercase">{sectionContent.journal.index} · {interfaceLabels.comingSoon}</p>
-              <h3 className="mt-5 text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{interfaceLabels.blogSoonTitle}</h3>
-              <p className="mt-5 text-base text-white/52">{interfaceLabels.blogSoonMessage}</p>
-            </article>
-          </Reveal>
+        <Reveal className="grid gap-6 rounded-[2rem] border border-blue-dark/10 bg-white p-7 sm:p-9 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <div><p className="font-mono text-[0.62rem] tracking-[0.14em] text-blue uppercase">{sectionContent.projects.index} · {interfaceLabels.comingSoon}</p><h2 id="projects-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-blue-dark sm:text-4xl">{interfaceLabels.projectsSoonTitle}</h2></div>
+          <p className="max-w-xl text-base text-ink/52 lg:justify-self-end">{interfaceLabels.projectsSoonMessage}</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function JapanTravel() {
+  return (
+    <section id="journal" aria-labelledby="japan-travel-title" className="blueprint-grid scroll-mt-28 bg-blue-deep py-20 text-white sm:py-28">
+      <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
+        <Reveal className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div><p className="font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">{sectionContent.journal.index} · {japanTravel.category}</p><h2 id="japan-travel-title" className="mt-5 text-[clamp(2.8rem,5vw,5.4rem)] leading-[0.9] font-semibold tracking-[-0.065em]">{japanTravel.title}</h2></div>
+          <div className="lg:justify-self-end"><p className="font-mono text-[0.62rem] tracking-[0.12em] text-sky uppercase">{japanTravel.meta}</p><p className="mt-3 max-w-lg text-base leading-7 text-white/55">{japanTravel.intro}</p></div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          {japanTravel.photos.map((photo, index) => (
+            <Reveal key={photo.src} delay={index * 0.1} className={index === 0 ? "lg:mt-24" : ""}>
+              <motion.figure whileHover={{ y: -5 }} transition={{ duration: 0.25 }} className="group overflow-hidden rounded-[2rem] border border-white/12 bg-blue-dark p-2">
+                <div className={`relative overflow-hidden rounded-[1.55rem] ${index === 0 ? "aspect-[3/4]" : "aspect-[4/5]"}`}>
+                  <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 1024px) 92vw, 48vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
+                </div>
+                <figcaption className="flex items-center justify-between gap-4 px-3 py-4 text-xs"><span className="text-white/68">{photo.caption}</span><span className="font-mono text-[0.58rem] text-sky">0{index + 1}</span></figcaption>
+              </motion.figure>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
@@ -359,11 +355,11 @@ export function FluidPortfolio() {
       <Header />
       <main id="contenu">
         <Hero />
-        <StackMarquee />
         <About />
         <Experience />
         <Skills />
-        <FutureSpaces />
+        <ProjectsSoon />
+        <JapanTravel />
         <Education />
         <Contact />
       </main>

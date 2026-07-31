@@ -102,7 +102,9 @@ Le texte se trouve dans `src/data/content.ts`, dans `projectsSoonTitle` et `proj
 
 ## 9. Espace Blog
 
-L’espace Blog affiche lui aussi un message d’attente. Modifiez `blogSoonTitle` et `blogSoonMessage` pour changer ce texte. Les articles et les photographies seront intégrés plus tard, sans afficher de faux contenus aujourd’hui.
+L’espace Blog contient une rubrique **Voyage au Japon** alimentée par `japanTravel` dans `src/data/content.ts`.
+
+Les images optimisées utilisées par le site sont `public/japon-feuillage.jpg` et `public/japon-lanterne.jpg`. Pour modifier un titre, une légende ou un texte alternatif, éditez simplement l’objet `japanTravel`.
 
 ## 10. Modifier les coordonnées
 

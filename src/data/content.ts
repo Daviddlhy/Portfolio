@@ -76,10 +76,7 @@ export const interfaceLabels = {
   contactIntro: "Échangeons sur vos enjeux de plateforme, de migration ou d’industrialisation.",
   projectsSoonTitle: "Projets personnels",
   projectsSoonMessage: "Cette section sera bientôt créée.",
-  blogSoonTitle: "Blog & photographies",
-  blogSoonMessage: "Cette section sera bientôt créée.",
   comingSoon: "Bientôt",
-  futureSpacesTitle: "À venir",
   showMissions: "Voir les missions",
   hideMissions: "Masquer les missions",
   profileStatementLead: "Je transforme les besoins data en systèmes",
@@ -98,6 +95,26 @@ export const sectionContent = {
 };
 
 export const profileFocus = ["Data Science", "BI", "Data Engineering"];
+
+// BLOG — VOYAGE AU JAPON
+export const japanTravel = {
+  category: "Carnet photographique",
+  title: "Voyage au Japon",
+  meta: "Japon · 2026",
+  intro: "Deux instants saisis au Japon, entre végétation et lumière.",
+  photos: [
+    {
+      src: "/japon-feuillage.jpg",
+      alt: "Feuillage vert au premier plan devant une maison japonaise floue",
+      caption: "Détails végétaux",
+    },
+    {
+      src: "/japon-lanterne.jpg",
+      alt: "Lanterne japonaise éclairée sous une structure en bois avec des fleurs jaunes",
+      caption: "Lumière du soir",
+    },
+  ],
+};
 
 // EXPÉRIENCES PROFESSIONNELLES
 export const experiences: Experience[] = [
