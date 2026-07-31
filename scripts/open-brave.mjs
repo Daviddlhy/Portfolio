@@ -5,6 +5,8 @@ const port = 3000;
 const localUrl = `http://${host}:${port}`;
 const pollIntervalMs = 300;
 const startupTimeoutMs = 20_000;
+let browserOpened = false;
+let readinessCheckInProgress = false;
 
 function siteIsReady() {
   return fetch(localUrl, { signal: AbortSignal.timeout(1_000) })
@@ -13,6 +15,9 @@ function siteIsReady() {
 }
 
 function openInBrave() {
+  if (browserOpened) return;
+  browserOpened = true;
+
   const browser = spawn("open", ["-a", "Brave Browser", localUrl], {
     detached: true,
     stdio: "ignore",
@@ -35,16 +40,23 @@ const server = spawn(
 
 const startedAt = Date.now();
 const poll = setInterval(async () => {
-  if (await siteIsReady()) {
-    clearInterval(poll);
-    openInBrave();
-    return;
-  }
+  if (readinessCheckInProgress || browserOpened) return;
+  readinessCheckInProgress = true;
 
-  if (Date.now() - startedAt > startupTimeoutMs) {
-    clearInterval(poll);
-    console.error("Le site n’a pas pu démarrer sur le port 3000.");
-    server.kill("SIGINT");
+  try {
+    if (await siteIsReady()) {
+      clearInterval(poll);
+      openInBrave();
+      return;
+    }
+
+    if (Date.now() - startedAt > startupTimeoutMs) {
+      clearInterval(poll);
+      console.error("Le site n’a pas pu démarrer sur le port 3000.");
+      server.kill("SIGINT");
+    }
+  } finally {
+    readinessCheckInProgress = false;
   }
 }, pollIntervalMs);
 
