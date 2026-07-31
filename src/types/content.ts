@@ -3,10 +3,8 @@ export type Profile = {
   initials: string;
   title: string;
   summary: string[];
-  stack: string[];
   location: string;
   workMode: string;
-  language: string;
   email: string;
   linkedin: string;
   image: string;
@@ -40,7 +38,7 @@ export type NavigationItem = {
 };
 
 export type ContactItem = {
-  kind: "email" | "linkedin" | "location" | "workMode";
+  kind: "linkedin" | "location" | "workMode";
   label: string;
   value: string;
   href?: string;

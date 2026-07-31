@@ -16,20 +16,8 @@ export const profile: Profile = {
     "Issu d’un parcours en Data Science et BI, je me suis spécialisé en Data Engineering autour des technologies Azure et Snowflake.",
     "J’interviens sur l’industrialisation des traitements, les pipelines de données et l’automatisation des déploiements.",
   ],
-  stack: [
-    "Azure",
-    "Snowflake",
-    "Python",
-    "SQL",
-    "PySpark",
-    "Docker",
-    "CI/CD",
-    "DevOps",
-    "Data Platform",
-  ],
   location: "Île-de-France",
   workMode: "Télétravail ou présentiel",
-  language: "Français",
   email: "david.ddelhaye@gmail.com",
   linkedin: "https://www.linkedin.com/in/d-delhaye/",
   image: "/profile.jpeg",
@@ -66,7 +54,6 @@ export const interfaceLabels = {
   closeMenu: "Fermer le menu",
   viewExperience: "Voir mon parcours",
   contactMe: "Me contacter",
-  mainStack: "Stack principale",
   downloadCv: "Télécharger le CV",
   backToTop: "Retour en haut",
   availability: "Disponible pour de nouveaux projets",
@@ -85,7 +72,6 @@ export const interfaceLabels = {
 };
 
 export const sectionContent = {
-  home: { index: "01", title: "Accueil" },
   about: { index: "02", title: "Profil" },
   experience: { index: "03", title: "Parcours" },
   skills: { index: "04", title: "Expertise" },
@@ -205,27 +191,21 @@ export const education: Education[] = [
 // CONTACT
 export const contactItems: ContactItem[] = [
   {
-    kind: "email",
-    label: "E-mail",
-    value: "david.ddelhaye@gmail.com",
-    href: "mailto:david.ddelhaye@gmail.com",
-  },
-  {
     kind: "linkedin",
     label: "LinkedIn",
     value: "linkedin.com/in/d-delhaye",
-    href: "https://www.linkedin.com/in/d-delhaye/",
+    href: profile.linkedin,
     external: true,
   },
   {
     kind: "location",
     label: "Localisation",
-    value: "Île-de-France",
+    value: profile.location,
   },
   {
     kind: "workMode",
     label: "Mode de travail",
-    value: "Télétravail ou présentiel",
+    value: profile.workMode,
   },
 ];
 

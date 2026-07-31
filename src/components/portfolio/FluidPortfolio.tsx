@@ -66,17 +66,16 @@ type SectionHeadingProps = {
   index: string;
   title: string;
   intro?: string;
-  inverted?: boolean;
 };
 
-function SectionHeading({ index, title, intro, inverted = false }: SectionHeadingProps) {
+function SectionHeading({ index, title, intro }: SectionHeadingProps) {
   return (
     <Reveal className="grid gap-7 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
       <div>
-        <p className={`font-mono text-[0.65rem] tracking-[0.16em] uppercase ${inverted ? "text-sky" : "text-blue"}`}>{index}</p>
-        <h2 className={`mt-5 text-[clamp(2.6rem,4.8vw,5rem)] leading-[0.92] font-semibold tracking-[-0.06em] ${inverted ? "text-white" : "text-blue-dark"}`}>{title}</h2>
+        <p className="font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">{index}</p>
+        <h2 className="mt-5 text-[clamp(2.6rem,4.8vw,5rem)] leading-[0.92] font-semibold tracking-[-0.06em] text-white">{title}</h2>
       </div>
-      {intro ? <p className={`max-w-xl text-base leading-7 lg:justify-self-end ${inverted ? "text-white/58" : "text-ink/58"}`}>{intro}</p> : null}
+      {intro ? <p className="max-w-xl text-base leading-7 text-white/58 lg:justify-self-end">{intro}</p> : null}
     </Reveal>
   );
 }
@@ -197,7 +196,7 @@ function About() {
   return (
     <section id="a-propos" aria-labelledby="about-title" className="panel-section soft-grid scroll-mt-28 bg-blue-dark py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} inverted />
+        <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} />
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
           <Reveal>
             <p className="max-w-sm text-lg leading-8 text-white/60">{profile.summary[1]}</p>
@@ -225,7 +224,7 @@ function Experience() {
   return (
     <section id="experiences" aria-labelledby="experience-title" className="panel-section blueprint-grid scroll-mt-28 bg-[#0a2a57] py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.experience.index} title={sectionContent.experience.title} intro={interfaceLabels.experienceIntro} inverted />
+        <SectionHeading index={sectionContent.experience.index} title={sectionContent.experience.title} intro={interfaceLabels.experienceIntro} />
         <h3 id="experience-title" className="sr-only">{sectionContent.experience.title}</h3>
         <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/12 bg-blue-deep/65 shadow-[0_16px_45px_rgba(4,17,38,0.22)] backdrop-blur-sm">
           {experiences.map((experience, index) => (
@@ -266,7 +265,7 @@ function Skills() {
   return (
     <section id="competences" aria-labelledby="skills-title" className="panel-section blueprint-grid scroll-mt-28 bg-blue-dark py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.skills.index} title={sectionContent.skills.title} intro={interfaceLabels.skillsIntro} inverted />
+        <SectionHeading index={sectionContent.skills.index} title={sectionContent.skills.title} intro={interfaceLabels.skillsIntro} />
         <h3 id="skills-title" className="sr-only">{sectionContent.skills.title}</h3>
         <div className="mt-12 grid border-t border-white/15 lg:grid-cols-2 lg:gap-x-12">
           {skills.map((category, index) => (
@@ -326,7 +325,7 @@ function Education() {
   return (
     <section id="formations" aria-labelledby="education-title" className="panel-section blueprint-grid scroll-mt-28 bg-[#0a2a57] py-24 text-white sm:py-32">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.education.index} title={sectionContent.education.title} inverted />
+        <SectionHeading index={sectionContent.education.index} title={sectionContent.education.title} />
         <h3 id="education-title" className="sr-only">{sectionContent.education.title}</h3>
         <div className="mt-14 border-t border-white/15">
           {education.map((item, index) => (
@@ -358,7 +357,7 @@ function Contact() {
         <Reveal delay={0.1} className="self-end">
           <a href={`mailto:${profile.email}`} className="group flex items-center justify-between gap-5 rounded-2xl bg-blue p-5 text-lg font-semibold transition-colors hover:bg-[#397cff] sm:text-xl"><span className="overflow-wrap-anywhere">{profile.email}</span><Mail className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" /></a>
           <div className="mt-5 border-t border-white/15">
-            {contactItems.slice(1).map((item) => {
+            {contactItems.map((item) => {
               const content = <><span className="text-[0.62rem] tracking-[0.1em] text-white/40 uppercase">{item.label}</span><span className="text-right text-sm text-white/70">{item.value}</span></>;
               const className = "grid grid-cols-[0.7fr_1.3fr] gap-4 border-b border-white/15 py-4";
               return item.href ? <a key={item.kind} href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined} className={`${className} transition-colors hover:text-sky`}>{content}</a> : <div key={item.kind} className={className}>{content}</div>;

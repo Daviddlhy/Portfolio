@@ -116,7 +116,7 @@ Les images optimisées utilisées par le site sont `public/japon-feuillage.jpg` 
 
 ## 10. Modifier les coordonnées
 
-Dans `src/data/content.ts`, repérez `profile` et `contactItems`.
+Dans `src/data/content.ts`, repérez `profile`. Les coordonnées affichées dans `contactItems` reprennent automatiquement ces informations.
 
 - `email` contient l’adresse e-mail.
 - `linkedin` contient l’adresse complète du profil LinkedIn.

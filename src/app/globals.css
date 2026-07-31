@@ -5,20 +5,14 @@
   --blue: #246bfd;
   --blue-dark: #071a38;
   --blue-deep: #041126;
-  --blue-soft: #dceaff;
   --sky: #8fc5ff;
-  --paper: #f7f9fc;
-  --ink: #0d1b2e;
 }
 
 @theme inline {
   --color-blue: var(--blue);
   --color-blue-dark: var(--blue-dark);
   --color-blue-deep: var(--blue-deep);
-  --color-blue-soft: var(--blue-soft);
   --color-sky: var(--sky);
-  --color-paper: var(--paper);
-  --color-ink: var(--ink);
   --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -34,7 +28,7 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  color: var(--ink);
+  color: #ffffff;
   background: var(--blue-deep);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
