@@ -53,7 +53,7 @@ npm run brave
 
 N’ouvrez pas un fichier `index.html` directement dans Brave : ce portfolio utilise Next.js et doit être affiché depuis l’adresse locale ouverte par cette commande.
 
-Le portfolio se parcourt naturellement avec la molette ou le pavé tactile. La barre flottante permet d’atteindre directement une section et la ligne bleue placée sous cette barre indique la progression dans la page.
+Le portfolio est organisé en écrans successifs : utilisez le menu, les flèches placées en bas au centre ou les touches gauche et droite du clavier pour changer de section. La ligne bleue sous le menu indique votre progression. Sur les petits écrans, une section peut défiler intérieurement si son contenu dépasse la hauteur disponible.
 
 Dans le parcours professionnel, les missions restent repliées par défaut. Cliquez sur une expérience pour afficher ou masquer son détail.
 
