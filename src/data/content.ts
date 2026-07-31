@@ -31,8 +31,6 @@ export const profile: Profile = {
   workMode: "Télétravail ou présentiel",
   language: "Français",
   email: "david.ddelhaye@gmail.com",
-  phone: "+33672590422",
-  phoneDisplay: "+33 6-72-59-04-22",
   linkedin: "https://www.linkedin.com/in/d-delhaye/",
   image: "/profile.jpeg",
   imageAlt: "Portrait de David Delhaye",
@@ -208,12 +206,6 @@ export const contactItems: ContactItem[] = [
     label: "E-mail",
     value: "david.ddelhaye@gmail.com",
     href: "mailto:david.ddelhaye@gmail.com",
-  },
-  {
-    kind: "phone",
-    label: "Téléphone",
-    value: "+33 6-72-59-04-22",
-    href: "tel:+33672590422",
   },
   {
     kind: "linkedin",

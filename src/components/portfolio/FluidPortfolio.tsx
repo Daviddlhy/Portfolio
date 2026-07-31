@@ -107,9 +107,9 @@ function Header() {
             <span className="hidden text-sm font-semibold sm:block">{profile.name}</span>
           </a>
 
-          <nav aria-label={interfaceLabels.mainNavigation} className="hidden items-center gap-4 xl:flex">
+          <nav aria-label={interfaceLabels.mainNavigation} className="hidden items-center gap-1.5 xl:flex">
             {navigation.slice(1).map((item) => (
-              <a key={item.href} href={item.href} className="text-[0.68rem] font-semibold tracking-[0.04em] text-blue-dark/55 transition-colors hover:text-blue">{item.label}</a>
+              <a key={item.href} href={item.href} className="inline-flex min-h-10 items-center rounded-lg px-3 text-[0.78rem] font-semibold tracking-[0.025em] text-blue-dark/68 transition-colors hover:bg-blue-soft/65 hover:text-blue">{item.label}</a>
             ))}
           </nav>
 

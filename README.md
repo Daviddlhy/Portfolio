@@ -119,8 +119,6 @@ Les images optimisées utilisées par le site sont `public/japon-feuillage.jpg` 
 Dans `src/data/content.ts`, repérez `profile` et `contactItems`.
 
 - `email` contient l’adresse e-mail.
-- `phone` contient le numéro sans espaces utilisé par le lien téléphonique.
-- `phoneDisplay` contient le numéro affiché.
 - `linkedin` contient l’adresse complète du profil LinkedIn.
 - `location` contient la localisation.
 - `workMode` contient le mode de travail.

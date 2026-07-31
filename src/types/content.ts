@@ -8,8 +8,6 @@ export type Profile = {
   workMode: string;
   language: string;
   email: string;
-  phone: string;
-  phoneDisplay: string;
   linkedin: string;
   image: string;
   imageAlt: string;
@@ -42,7 +40,7 @@ export type NavigationItem = {
 };
 
 export type ContactItem = {
-  kind: "email" | "phone" | "linkedin" | "location" | "workMode";
+  kind: "email" | "linkedin" | "location" | "workMode";
   label: string;
   value: string;
   href?: string;
