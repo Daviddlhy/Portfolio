@@ -99,23 +99,23 @@ function Header() {
   return (
     <>
       <a href="#contenu" className="fixed top-2 left-2 z-[100] -translate-y-20 rounded-full bg-blue px-4 py-2 text-xs text-white transition-transform focus:translate-y-0">{interfaceLabels.skipToContent}</a>
-      <header className="fixed inset-x-4 top-4 z-50 mx-auto max-w-[1380px] rounded-2xl border border-blue-dark/10 bg-white/90 shadow-[0_12px_40px_rgba(4,17,38,0.12)] backdrop-blur-xl sm:inset-x-6">
+      <header className="fixed inset-x-4 top-4 z-50 mx-auto max-w-[1520px] rounded-2xl border border-blue-dark/10 bg-white/90 shadow-[0_12px_40px_rgba(4,17,38,0.12)] backdrop-blur-xl sm:inset-x-6">
         <motion.span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-blue" style={{ scaleX: progress }} />
-        <div className="flex min-h-20 items-center justify-between gap-5 px-5 sm:px-7 2xl:min-h-[5.5rem]">
+        <div className="flex min-h-20 items-center justify-between gap-5 px-5 sm:px-7 xl:min-h-24 xl:px-8 2xl:min-h-[6.5rem]">
           <a href="#accueil" className="group flex items-center gap-3 text-blue-dark" onClick={() => setMenuOpen(false)}>
-            <span className="grid size-11 place-items-center rounded-xl bg-blue-dark font-mono text-xs tracking-[0.08em] text-white transition-colors group-hover:bg-blue">{profile.initials}</span>
-            <span className="hidden text-base font-semibold sm:block 2xl:text-lg">{profile.name}</span>
+            <span className="grid size-11 place-items-center rounded-xl bg-blue-dark font-mono text-xs tracking-[0.08em] text-white transition-colors group-hover:bg-blue xl:size-12 xl:text-sm">{profile.initials}</span>
+            <span className="hidden text-base font-semibold sm:block xl:text-lg 2xl:text-xl">{profile.name}</span>
           </a>
 
-          <nav aria-label={interfaceLabels.mainNavigation} className="hidden items-center gap-1 xl:flex 2xl:gap-2">
+          <nav aria-label={interfaceLabels.mainNavigation} className="hidden items-center gap-1 xl:flex 2xl:gap-1.5">
             {navigation.slice(1).map((item) => (
-              <a key={item.href} href={item.href} className="inline-flex min-h-12 items-center rounded-xl px-3 text-[0.95rem] font-semibold tracking-[0.015em] text-blue-dark/72 transition-colors hover:bg-blue-soft/65 hover:text-blue 2xl:px-4 2xl:text-base">{item.label}</a>
+              <a key={item.href} href={item.href} className="inline-flex min-h-14 items-center rounded-xl px-4 text-[1.05rem] font-semibold tracking-[0.01em] text-blue-dark/75 transition-colors hover:bg-blue-soft/65 hover:text-blue 2xl:px-5 2xl:text-lg">{item.label}</a>
             ))}
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href={profile.cv} download className="hidden min-h-12 items-center gap-2.5 rounded-xl bg-blue-dark px-5 text-sm font-semibold text-white transition-colors hover:bg-blue sm:inline-flex 2xl:min-h-13 2xl:px-6 2xl:text-[0.95rem]">
-              {interfaceLabels.downloadCv}<Download className="size-4" aria-hidden="true" />
+            <a href={profile.cv} download className="hidden min-h-12 items-center gap-2.5 rounded-xl bg-blue-dark px-5 text-sm font-semibold text-white transition-colors hover:bg-blue sm:inline-flex xl:min-h-14 xl:px-6 xl:text-base 2xl:min-h-15 2xl:px-7 2xl:text-lg">
+              {interfaceLabels.downloadCv}<Download className="size-4 xl:size-[1.125rem]" aria-hidden="true" />
             </a>
             <button type="button" aria-label={menuOpen ? interfaceLabels.closeMenu : interfaceLabels.openMenu} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="grid size-11 place-items-center rounded-xl border border-blue-dark/15 text-blue-dark xl:hidden">
               {menuOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
