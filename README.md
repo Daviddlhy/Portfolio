@@ -45,6 +45,8 @@ Cette commande démarre le serveur de développement. Ouvrez ensuite [http://loc
 
 Les modifications apparaissent automatiquement après l’enregistrement d’un fichier.
 
+Le portfolio ne se parcourt pas comme une page classique : utilisez la navigation latérale, les boutons **Vue précédente / Vue suivante** ou les flèches gauche et droite du clavier.
+
 ## 4. Arrêter le serveur
 
 Revenez dans le terminal où le serveur fonctionne, puis appuyez sur :
@@ -90,24 +92,15 @@ items: ["Docker", "Azure DevOps", "Azure Pipelines", "Git"],
 
 Supprimez la compétence avec ses guillemets et la virgule voisine. Ne supprimez pas les crochets `[` et `]`.
 
-## 8. Ajouter un projet personnel
+## 8. Espace Projets
 
-Dans `src/data/content.ts`, repérez le tableau `personalProjects`. Chaque projet peut contenir un titre, un statut, une description et une liste de thèmes.
+L’espace Projets affiche volontairement le message « Cette section sera bientôt créée. ».
 
-Pour ajouter une image, placez le fichier dans `public`, puis ajoutez ces deux lignes dans le projet :
+Le texte se trouve dans `src/data/content.ts`, dans `projectsSoonTitle` et `projectsSoonMessage`. La vraie structure des projets pourra être ajoutée lorsque les premiers contenus seront disponibles.
 
-```ts
-image: "/mon-projet.jpg",
-imageAlt: "Description de l’image",
-```
+## 9. Espace Blog
 
-Vous pouvez aussi ajouter `href: "https://..."` lorsqu’une démonstration ou un dépôt est disponible.
-
-## 9. Ajouter une note ou une photo au journal
-
-Dans `src/data/content.ts`, repérez `journalFormats`. Les trois formats proposés peuvent être remplacés par de vrais articles. Pour afficher une photo, placez-la dans `public`, puis renseignez `image` et `imageAlt` comme pour un projet. Ajoutez `date` et `href` lorsqu’un article est publié.
-
-Le format recommandé est un journal hybride : retours techniques courts, journaux de construction plus détaillés et séries photo personnelles.
+L’espace Blog affiche lui aussi un message d’attente. Modifiez `blogSoonTitle` et `blogSoonMessage` pour changer ce texte. Les articles et les photographies seront intégrés plus tard, sans afficher de faux contenus aujourd’hui.
 
 ## 10. Modifier les coordonnées
 
@@ -127,10 +120,10 @@ Mettez également à jour les valeurs correspondantes dans `contactItems` afin q
 Ouvrez `src/app/globals.css`. Au début du fichier, repérez :
 
 ```css
---brand: #77836f;
+--signal: #ff5b35;
 ```
 
-Remplacez `#77836f` par le code de la nouvelle couleur. Les autres variables permettent d’ajuster le noir encre, le fond ivoire, le sable et la teinte bois.
+Remplacez `#ff5b35` par le code de la couleur d’accent. Les autres variables permettent d’ajuster le noir, le crème et les gris de l’interface.
 
 ## 12. Remplacer le CV
 
@@ -222,7 +215,7 @@ git revert IDENTIFIANT
 
 - `src/data/content.ts` : toutes les informations affichées.
 - `src/app/globals.css` : couleurs et styles globaux.
-- `src/components/` : mise en page visuelle ; à modifier seulement si vous connaissez React.
+- `src/components/portfolio/PortfolioShell.tsx` : interface plein écran et interactions ; à modifier seulement si vous connaissez React.
 - `public/profile.jpeg` : photo de profil.
 - `public/CV_DELHAYE.pdf` : CV téléchargeable.
 - `package.json` : commandes et liste des dépendances.

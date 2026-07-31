@@ -2,9 +2,7 @@ import type {
   ContactItem,
   Education,
   Experience,
-  JournalFormat,
   NavigationItem,
-  PersonalProject,
   Profile,
   SkillCategory,
 } from "@/types/content";
@@ -49,12 +47,13 @@ export const site = {
 };
 
 export const navigation: NavigationItem[] = [
-  { label: "À propos", href: "#a-propos" },
-  { label: "Expériences", href: "#experiences" },
-  { label: "Compétences", href: "#competences" },
+  { label: "Accueil", href: "#accueil" },
+  { label: "Profil", href: "#a-propos" },
+  { label: "Parcours", href: "#experiences" },
+  { label: "Expertise", href: "#competences" },
   { label: "Projets", href: "#projets" },
-  { label: "Journal", href: "#journal" },
-  { label: "Formations", href: "#formations" },
+  { label: "Blog", href: "#journal" },
+  { label: "Formation", href: "#formations" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -77,24 +76,33 @@ export const interfaceLabels = {
   contactKicker: "Un projet data à structurer ?",
   contactHeadline: "Parlons data.",
   contactIntro: "Échangeons sur vos enjeux de plateforme, de migration ou d’industrialisation.",
-  projectsIntro: "Un espace pour documenter les projets personnels, de l’idée initiale au retour d’expérience.",
-  journalIntro: "Un journal à mi-chemin entre notes techniques, coulisses de projets et fragments photographiques.",
-  projectSuggestion: "Piste de projet",
-  journalSuggestion: "Format proposé",
-  discover: "Découvrir",
-  portraitLabel: "Portrait",
-  viewProject: "Voir le projet",
-  readEntry: "Lire la note",
+  previousSection: "Vue précédente",
+  nextSection: "Vue suivante",
+  sectionNavigation: "Navigation par vues",
+  keyboardHint: "Flèches gauche / droite",
+  selectExperience: "Sélectionner une expérience",
+  projectsSoonTitle: "Projets personnels",
+  projectsSoonMessage: "Cette section sera bientôt créée.",
+  blogSoonTitle: "Blog & photographies",
+  blogSoonMessage: "Cette section sera bientôt créée.",
+  comingSoon: "Bientôt",
+  profileStatementLead: "Je transforme les besoins data en systèmes",
+  profileStatementAccent: "fiables et durables.",
+  skillsHeadingLead: "Stack",
+  skillsHeadingAccent: "& outils",
+  educationHeadingLead: "Formation",
+  educationHeadingAccent: "académique",
 };
 
 export const sectionContent = {
-  about: { index: "01", title: "À propos" },
-  experience: { index: "02", title: "Expériences professionnelles" },
-  skills: { index: "03", title: "Compétences" },
-  projects: { index: "04", title: "Projets personnels" },
-  journal: { index: "05", title: "Journal" },
-  education: { index: "06", title: "Diplômes et formations" },
-  contact: { index: "07", title: "Contact" },
+  home: { index: "01", title: "Accueil" },
+  about: { index: "02", title: "Profil" },
+  experience: { index: "03", title: "Parcours" },
+  skills: { index: "04", title: "Expertise" },
+  projects: { index: "05", title: "Projets" },
+  journal: { index: "06", title: "Blog" },
+  education: { index: "07", title: "Formation" },
+  contact: { index: "08", title: "Contact" },
 };
 
 export const profileFocus = ["Data Science", "BI", "Data Engineering"];
@@ -166,54 +174,6 @@ export const skills: SkillCategory[] = [
   },
   { name: "BI & Gouvernance", items: ["MicroStrategy", "DataGalaxy"] },
   { name: "Langages", items: ["Python", "SQL", "R"] },
-];
-
-// PROJETS PERSONNELS — ces pistes sont des emplacements à remplacer par vos réalisations.
-// Ajoutez `image: "/nom-de-la-photo.jpg"` et `href` lorsqu’un projet est publié.
-export const personalProjects: PersonalProject[] = [
-  {
-    title: "Observatoire de la qualité des données",
-    status: "Piste de projet",
-    description:
-      "Imaginer un outil simple pour suivre la fraîcheur, la complétude et les anomalies d’un pipeline de données.",
-    themes: ["Data quality", "Python", "Observabilité"],
-  },
-  {
-    title: "Pipeline de données de bout en bout",
-    status: "Piste de projet",
-    description:
-      "Documenter une architecture personnelle, de l’ingestion au déploiement, avec les choix techniques et leurs compromis.",
-    themes: ["Azure", "Snowflake", "CI/CD"],
-  },
-  {
-    title: "FinOps pour Snowflake",
-    status: "Piste de projet",
-    description:
-      "Explorer le suivi des coûts et proposer des indicateurs lisibles pour mieux piloter l’usage d’une plateforme Snowflake.",
-    themes: ["FinOps", "Snowflake", "Data viz"],
-  },
-];
-
-// JOURNAL / BLOG — chaque format accepte une photo optionnelle placée dans `public`.
-export const journalFormats: JournalFormat[] = [
-  {
-    kind: "Notes",
-    title: "Retours de terrain",
-    description:
-      "Des textes courts sur les décisions d’architecture, les erreurs utiles et les bonnes pratiques data.",
-  },
-  {
-    kind: "Build log",
-    title: "Dans les coulisses d’un projet",
-    description:
-      "Un suivi visuel et progressif : intention, prototype, arbitrages, résultat et enseignements.",
-  },
-  {
-    kind: "Photographie",
-    title: "Hors du terminal",
-    description:
-      "Des séries photo personnelles pour apporter un rythme plus humain au portfolio, sans diluer son identité professionnelle.",
-  },
 ];
 
 // FORMATIONS

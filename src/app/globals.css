@@ -1,26 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  /* PALETTE JAPANDI : sauge, encre, papier et bois clair. */
-  --brand: #77836f;
-  --brand-dark: #4f5a49;
-  --ink: #272923;
-  --ink-soft: #4b4e46;
-  --paper: #f5f3ed;
-  --paper-deep: #e9e5dc;
-  --sand: #d7cbb9;
-  --wood: #a57f5f;
+  /* IDENTITÉ : crème éditorial, noir encre et orange signal. */
+  --signal: #ff5b35;
+  --ink: #111210;
+  --ink-soft: #23241f;
+  --canvas: #e9e7df;
+  --paper: #f6f4ed;
+  --muted: #a4a39c;
 }
 
 @theme inline {
-  --color-brand: var(--brand);
-  --color-brand-dark: var(--brand-dark);
+  --color-signal: var(--signal);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
+  --color-canvas: var(--canvas);
   --color-paper: var(--paper);
-  --color-paper-deep: var(--paper-deep);
-  --color-sand: var(--sand);
-  --color-wood: var(--wood);
+  --color-muted: var(--muted);
   --font-sans: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -28,30 +24,37 @@
 
 * { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
-  overflow-x: hidden;
-  color: var(--ink);
-  background: var(--paper);
+  overflow: hidden;
+  color: var(--paper);
+  background: var(--ink);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { color: #ffffff; background: var(--brand-dark); }
+button, a { -webkit-tap-highlight-color: transparent; }
 
-:focus-visible { outline: 2px solid var(--brand-dark); outline-offset: 4px; }
+::selection { color: var(--ink); background: var(--signal); }
+
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+
+.panel-scroll { scrollbar-width: thin; scrollbar-color: rgba(255, 91, 53, 0.65) transparent; }
+.panel-scroll::-webkit-scrollbar { width: 5px; }
+.panel-scroll::-webkit-scrollbar-track { background: transparent; }
+.panel-scroll::-webkit-scrollbar-thumb { background: rgba(255, 91, 53, 0.65); }
+
+.ghost-index {
+  color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
 
 .overflow-wrap-anywhere { overflow-wrap: anywhere; }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-
   *, *::before, *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
