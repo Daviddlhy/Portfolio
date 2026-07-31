@@ -168,18 +168,11 @@ npm run build
 
 La publication est prête lorsque les trois commandes se terminent sans erreur.
 
-## 14. Déployer sur Vercel
+## 14. Déployer sur Azure Static Web Apps
 
-La méthode la plus simple passe par GitHub :
+Le dépôt est relié à la ressource Azure Static Web Apps `Portfolio`. La GitHub Action située dans `.github/workflows` construit une exportation statique Next.js dans le dossier `out`, puis la publie automatiquement.
 
-1. Envoyez le projet sur un dépôt GitHub.
-2. Connectez-vous sur [vercel.com](https://vercel.com/) avec GitHub.
-3. Cliquez sur **Add New**, puis **Project**.
-4. Importez le dépôt du portfolio.
-5. Vérifiez que Vercel reconnaît automatiquement **Next.js**.
-6. Conservez les réglages proposés et cliquez sur **Deploy**.
-
-Chaque mise à jour envoyée sur la branche de production déclenchera ensuite un nouveau déploiement. La procédure officielle est détaillée dans la [documentation Vercel](https://vercel.com/docs/git).
+Chaque mise à jour envoyée sur la branche `main` déclenche un nouveau déploiement. Le site de production est disponible à l’adresse [thankful-bay-02bde2103.2.azurestaticapps.net](https://thankful-bay-02bde2103.2.azurestaticapps.net/).
 
 ## 15. Récupérer de futures modifications avec Git
 

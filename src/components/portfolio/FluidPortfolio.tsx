@@ -199,7 +199,9 @@ function About() {
         <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} />
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
           <Reveal>
-            <p className="max-w-sm text-lg leading-8 text-white/60">{profile.summary[1]}</p>
+            {profile.summary.slice(1).map((summary, index) => (
+              <p key={summary} className={`max-w-sm text-lg leading-8 text-white/60 ${index > 0 ? "mt-4" : ""}`}>{summary}</p>
+            ))}
             <p className="mt-8 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-blue uppercase"><MapPin className="size-4" aria-hidden="true" />{profile.location} · {profile.workMode}</p>
           </Reveal>
           <Reveal delay={0.08}>
