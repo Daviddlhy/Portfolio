@@ -35,12 +35,23 @@ type RevealProps = {
 
 function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const reduceMotion = useReducedMotion();
+  const [animationsReady, setAnimationsReady] = useState(false);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setAnimationsReady(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   return (
     <motion.div
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 34 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={false}
+      animate={animationsReady && !reduceMotion ? "hidden" : "visible"}
+      whileInView="visible"
+      variants={{
+        hidden: { opacity: 0, y: 34 },
+        visible: { opacity: 1, y: 0 },
+      }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -140,15 +151,15 @@ function Hero() {
       <div aria-hidden="true" className="ambient-orb-delayed absolute right-[4%] bottom-[5%] size-72 rounded-full bg-sky/14 blur-3xl" />
       <div className="mx-auto grid min-h-[72vh] max-w-[1380px] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
         <div className="relative z-10">
-          <motion.p initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">
+          <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex items-center gap-3 font-mono text-[0.65rem] tracking-[0.16em] text-sky uppercase">
             <span className="size-2 rounded-full bg-sky shadow-[0_0_18px_rgba(143,197,255,0.9)]" aria-hidden="true" />{interfaceLabels.availability}
           </motion.p>
-          <motion.h1 id="hero-title" initial={reduceMotion ? false : { opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="mt-9 text-[clamp(4rem,8.5vw,8.2rem)] leading-[0.76] font-semibold tracking-[-0.08em]">
+          <motion.h1 id="hero-title" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }} className="mt-9 text-[clamp(4rem,8.5vw,8.2rem)] leading-[0.76] font-semibold tracking-[-0.08em]">
             {titleLead}
             <span className="block font-serif font-normal text-sky italic">{titleAccent}</span>
           </motion.h1>
-          <motion.p initial={reduceMotion ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.18 }} className="mt-10 max-w-2xl text-lg leading-8 text-white/65 sm:text-xl">{profile.summary[0]}</motion.p>
-          <motion.div initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.18 }} className="mt-10 max-w-2xl text-lg leading-8 text-white/65 sm:text-xl">{profile.summary[0]}</motion.p>
+          <motion.div initial={false} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href="#experiences" className="inline-flex min-h-13 items-center justify-center gap-3 rounded-xl bg-blue px-5 text-sm font-semibold text-white transition-[background-color,transform] hover:-translate-y-0.5 hover:bg-[#397cff]">{interfaceLabels.viewExperience}<ArrowDownRight className="size-4" aria-hidden="true" /></a>
             <a href="#contact" className="inline-flex min-h-13 items-center justify-center gap-3 rounded-xl border border-white/25 px-5 text-sm font-semibold text-white transition-colors hover:border-sky hover:text-sky">{interfaceLabels.contactMe}<ArrowUpRight className="size-4" aria-hidden="true" /></a>
           </motion.div>
