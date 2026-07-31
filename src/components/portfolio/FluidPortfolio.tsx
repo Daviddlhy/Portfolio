@@ -107,11 +107,11 @@ function Header({ activeIndex, onNavigate }: HeaderProps) {
   return (
     <>
       <a href="#contenu" className="fixed top-2 left-2 z-[100] -translate-y-20 rounded-full bg-blue px-4 py-2 text-xs text-white transition-transform focus:translate-y-0">{interfaceLabels.skipToContent}</a>
-      <header className="fixed inset-x-4 top-4 z-50 mx-auto max-w-[1520px] rounded-2xl border border-blue-dark/10 bg-white/90 shadow-[0_12px_40px_rgba(4,17,38,0.12)] backdrop-blur-xl sm:inset-x-6">
+      <header className="fixed inset-x-4 top-4 z-50 mx-auto max-w-[1520px] rounded-2xl border border-white/12 bg-blue-dark/92 shadow-[0_12px_40px_rgba(4,17,38,0.3)] backdrop-blur-xl sm:inset-x-6">
         <motion.span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-blue" animate={{ scaleX: progress }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }} />
         <div className="flex min-h-20 items-center justify-between gap-5 px-5 sm:px-7 xl:min-h-24 xl:px-8 2xl:min-h-[6.5rem]">
-          <a href="#accueil" aria-current={activeIndex === 0 ? "page" : undefined} className="group flex items-center gap-3 text-blue-dark" onClick={(event) => navigate(event, 0)}>
-            <span className="grid size-11 place-items-center rounded-xl bg-blue-dark font-mono text-xs tracking-[0.08em] text-white transition-colors group-hover:bg-blue xl:size-12 xl:text-sm">{profile.initials}</span>
+          <a href="#accueil" aria-current={activeIndex === 0 ? "page" : undefined} className="group flex items-center gap-3 text-white" onClick={(event) => navigate(event, 0)}>
+            <span className="grid size-11 place-items-center rounded-xl bg-blue font-mono text-xs tracking-[0.08em] text-white transition-colors group-hover:bg-sky group-hover:text-blue-deep xl:size-12 xl:text-sm">{profile.initials}</span>
             <span className="hidden text-base font-semibold sm:block xl:text-lg 2xl:text-xl">{profile.name}</span>
           </a>
 
@@ -119,15 +119,15 @@ function Header({ activeIndex, onNavigate }: HeaderProps) {
             {navigation.slice(1).map((item, index) => {
               const navigationIndex = index + 1;
               const isActive = navigationIndex === activeIndex;
-              return <a key={item.href} href={item.href} aria-current={isActive ? "page" : undefined} onClick={(event) => navigate(event, navigationIndex)} className={`inline-flex min-h-14 items-center rounded-xl px-4 text-[1.05rem] font-semibold tracking-[0.01em] transition-colors 2xl:px-5 2xl:text-lg ${isActive ? "bg-blue text-white" : "text-blue-dark/75 hover:bg-blue-soft/65 hover:text-blue"}`}>{item.label}</a>;
+              return <a key={item.href} href={item.href} aria-current={isActive ? "page" : undefined} onClick={(event) => navigate(event, navigationIndex)} className={`inline-flex min-h-14 items-center rounded-xl px-4 text-[1.05rem] font-semibold tracking-[0.01em] transition-colors 2xl:px-5 2xl:text-lg ${isActive ? "bg-blue text-white" : "text-white/70 hover:bg-white/8 hover:text-sky"}`}>{item.label}</a>;
             })}
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href={profile.cv} download className="hidden min-h-12 items-center gap-2.5 rounded-xl bg-blue-dark px-5 text-sm font-semibold text-white transition-colors hover:bg-blue sm:inline-flex xl:min-h-14 xl:px-6 xl:text-base 2xl:min-h-15 2xl:px-7 2xl:text-lg">
+            <a href={profile.cv} download className="hidden min-h-12 items-center gap-2.5 rounded-xl bg-blue px-5 text-sm font-semibold text-white transition-colors hover:bg-[#397cff] sm:inline-flex xl:min-h-14 xl:px-6 xl:text-base 2xl:min-h-15 2xl:px-7 2xl:text-lg">
               {interfaceLabels.downloadCv}<Download className="size-4 xl:size-[1.125rem]" aria-hidden="true" />
             </a>
-            <button type="button" aria-label={menuOpen ? interfaceLabels.closeMenu : interfaceLabels.openMenu} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="grid size-11 place-items-center rounded-xl border border-blue-dark/15 text-blue-dark xl:hidden">
+            <button type="button" aria-label={menuOpen ? interfaceLabels.closeMenu : interfaceLabels.openMenu} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="grid size-11 place-items-center rounded-xl border border-white/18 text-white xl:hidden">
               {menuOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
             </button>
           </div>
@@ -195,20 +195,20 @@ function Hero() {
 
 function About() {
   return (
-    <section id="a-propos" aria-labelledby="about-title" className="panel-section scroll-mt-28 bg-paper py-20 sm:py-28">
+    <section id="a-propos" aria-labelledby="about-title" className="panel-section soft-grid scroll-mt-28 bg-blue-dark py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} />
+        <SectionHeading index={sectionContent.about.index} title={sectionContent.about.title} inverted />
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
           <Reveal>
-            <p className="max-w-sm text-lg leading-8 text-ink/55">{profile.summary[1]}</p>
+            <p className="max-w-sm text-lg leading-8 text-white/60">{profile.summary[1]}</p>
             <p className="mt-8 flex items-center gap-2 text-xs font-semibold tracking-[0.1em] text-blue uppercase"><MapPin className="size-4" aria-hidden="true" />{profile.location} · {profile.workMode}</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h3 id="about-title" className="text-[clamp(2.2rem,3.8vw,4rem)] leading-[1.04] font-medium tracking-[-0.05em] text-blue-dark">{interfaceLabels.profileStatementLead} <span className="font-serif font-normal text-blue italic">{interfaceLabels.profileStatementAccent}</span></h3>
+            <h3 id="about-title" className="text-[clamp(2.2rem,3.8vw,4rem)] leading-[1.04] font-medium tracking-[-0.05em] text-white">{interfaceLabels.profileStatementLead} <span className="font-serif font-normal text-sky italic">{interfaceLabels.profileStatementAccent}</span></h3>
             <ul className="mt-9 flex flex-wrap gap-2">
               {profileFocus.map((focus, index) => (
-                <motion.li key={focus} whileHover={{ y: -2 }} className="inline-flex items-center gap-3 rounded-full border border-blue-dark/12 bg-white px-4 py-2.5">
-                  <span className="font-mono text-[0.55rem] text-blue">0{index + 1}</span><span className="text-sm font-semibold text-blue-dark">{focus}</span>
+                <motion.li key={focus} whileHover={{ y: -2 }} className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-blue-deep/55 px-4 py-2.5">
+                  <span className="font-mono text-[0.55rem] text-sky">0{index + 1}</span><span className="text-sm font-semibold text-white">{focus}</span>
                 </motion.li>
               ))}
             </ul>
@@ -223,24 +223,24 @@ function Experience() {
   const [openExperience, setOpenExperience] = useState<number | null>(null);
 
   return (
-    <section id="experiences" aria-labelledby="experience-title" className="panel-section scroll-mt-28 bg-blue-soft py-20 sm:py-28">
+    <section id="experiences" aria-labelledby="experience-title" className="panel-section blueprint-grid scroll-mt-28 bg-[#0a2a57] py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.experience.index} title={sectionContent.experience.title} intro={interfaceLabels.experienceIntro} />
+        <SectionHeading index={sectionContent.experience.index} title={sectionContent.experience.title} intro={interfaceLabels.experienceIntro} inverted />
         <h3 id="experience-title" className="sr-only">{sectionContent.experience.title}</h3>
-        <div className="mt-12 overflow-hidden rounded-[2rem] border border-blue-dark/10 bg-white shadow-[0_16px_45px_rgba(7,26,56,0.07)]">
+        <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/12 bg-blue-deep/65 shadow-[0_16px_45px_rgba(4,17,38,0.22)] backdrop-blur-sm">
           {experiences.map((experience, index) => (
-            <article key={`${experience.company}-${experience.period}`} className="border-b border-blue-dark/10 last:border-b-0">
+            <article key={`${experience.company}-${experience.period}`} className="border-b border-white/10 last:border-b-0">
               <button
                 type="button"
                 aria-expanded={openExperience === index}
                 aria-controls={`experience-details-${index}`}
                 onClick={() => setOpenExperience((current) => current === index ? null : index)}
-                className="group grid w-full gap-5 p-5 text-left transition-colors hover:bg-blue-soft/35 sm:grid-cols-[50px_0.8fr_1.2fr_auto] sm:items-center sm:p-6"
+                className="group grid w-full gap-5 p-5 text-left transition-colors hover:bg-blue/10 sm:grid-cols-[50px_0.8fr_1.2fr_auto] sm:items-center sm:p-6"
               >
-                <span className="font-mono text-[0.58rem] text-blue">0{index + 1}</span>
-                <div><p className="text-[0.62rem] font-semibold tracking-[0.1em] text-blue uppercase">{experience.company}</p><p className="mt-1 text-xs text-ink/42">{experience.period}</p></div>
-                <div><h3 className="text-xl font-semibold tracking-[-0.025em] text-blue-dark">{experience.role}</h3><p className="mt-1 flex items-center gap-1.5 text-xs text-ink/42"><MapPin className="size-3 text-blue" aria-hidden="true" />{experience.location}</p></div>
-                <span className="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.06em] text-blue uppercase">
+                <span className="font-mono text-[0.58rem] text-sky">0{index + 1}</span>
+                <div><p className="text-[0.62rem] font-semibold tracking-[0.1em] text-sky uppercase">{experience.company}</p><p className="mt-1 text-xs text-white/42">{experience.period}</p></div>
+                <div><h3 className="text-xl font-semibold tracking-[-0.025em] text-white">{experience.role}</h3><p className="mt-1 flex items-center gap-1.5 text-xs text-white/42"><MapPin className="size-3 text-sky" aria-hidden="true" />{experience.location}</p></div>
+                <span className="flex items-center gap-2 text-[0.62rem] font-semibold tracking-[0.06em] text-sky uppercase">
                   <span className="hidden lg:inline">{openExperience === index ? interfaceLabels.hideMissions : interfaceLabels.showMissions}</span>
                   <ChevronDown className={`size-4 transition-transform duration-300 ${openExperience === index ? "rotate-180" : ""}`} aria-hidden="true" />
                 </span>
@@ -248,8 +248,8 @@ function Experience() {
               <AnimatePresence initial={false}>
                 {openExperience === index ? (
                   <motion.div id={`experience-details-${index}`} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden">
-                    <ul className="grid gap-x-10 gap-y-3 border-t border-blue-dark/10 bg-blue-soft/25 px-5 py-6 sm:grid-cols-2 sm:px-6">
-                      {experience.missions.map((mission) => <li key={mission} className="grid grid-cols-[9px_1fr] gap-3 text-sm leading-6 text-ink/58 before:mt-[0.65rem] before:size-1.5 before:rounded-full before:bg-blue">{mission}</li>)}
+                    <ul className="grid gap-x-10 gap-y-3 border-t border-white/10 bg-blue/8 px-5 py-6 sm:grid-cols-2 sm:px-6">
+                      {experience.missions.map((mission) => <li key={mission} className="grid grid-cols-[9px_1fr] gap-3 text-sm leading-6 text-white/62 before:mt-[0.65rem] before:size-1.5 before:rounded-full before:bg-sky">{mission}</li>)}
                     </ul>
                   </motion.div>
                 ) : null}
@@ -285,11 +285,11 @@ function Skills() {
 
 function ProjectsSoon() {
   return (
-    <section id="projets" aria-labelledby="projects-title" className="panel-section soft-grid scroll-mt-28 bg-paper py-16 sm:py-20">
+    <section id="projets" aria-labelledby="projects-title" className="panel-section soft-grid scroll-mt-28 bg-blue-dark py-16 text-white sm:py-20">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <Reveal className="grid gap-6 rounded-[2rem] border border-blue-dark/10 bg-white p-7 sm:p-9 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-          <div><p className="font-mono text-[0.62rem] tracking-[0.14em] text-blue uppercase">{sectionContent.projects.index} · {interfaceLabels.comingSoon}</p><h2 id="projects-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-blue-dark sm:text-4xl">{interfaceLabels.projectsSoonTitle}</h2></div>
-          <p className="max-w-xl text-base text-ink/52 lg:justify-self-end">{interfaceLabels.projectsSoonMessage}</p>
+        <Reveal className="grid gap-6 rounded-[2rem] border border-white/12 bg-blue-deep/60 p-7 shadow-[0_16px_45px_rgba(4,17,38,0.2)] sm:p-9 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+          <div><p className="font-mono text-[0.62rem] tracking-[0.14em] text-sky uppercase">{sectionContent.projects.index} · {interfaceLabels.comingSoon}</p><h2 id="projects-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl">{interfaceLabels.projectsSoonTitle}</h2></div>
+          <p className="max-w-xl text-base text-white/58 lg:justify-self-end">{interfaceLabels.projectsSoonMessage}</p>
         </Reveal>
       </div>
     </section>
@@ -324,17 +324,17 @@ function JapanTravel() {
 
 function Education() {
   return (
-    <section id="formations" aria-labelledby="education-title" className="panel-section scroll-mt-28 bg-white py-24 sm:py-32">
+    <section id="formations" aria-labelledby="education-title" className="panel-section blueprint-grid scroll-mt-28 bg-[#0a2a57] py-24 text-white sm:py-32">
       <div className="mx-auto max-w-[1380px] px-5 sm:px-8 lg:px-12">
-        <SectionHeading index={sectionContent.education.index} title={sectionContent.education.title} />
+        <SectionHeading index={sectionContent.education.index} title={sectionContent.education.title} inverted />
         <h3 id="education-title" className="sr-only">{sectionContent.education.title}</h3>
-        <div className="mt-14 border-t border-blue-dark/15">
+        <div className="mt-14 border-t border-white/15">
           {education.map((item, index) => (
             <Reveal key={item.degree} delay={index * 0.08}>
-              <article className="grid gap-5 border-b border-blue-dark/15 py-8 transition-[padding,background-color] hover:bg-blue-soft/45 sm:grid-cols-[70px_1fr_180px] sm:gap-8 sm:hover:px-5">
-                <span className="font-mono text-[0.6rem] text-blue">0{index + 1}</span>
-                <div><p className="text-xs font-semibold tracking-[0.1em] text-blue uppercase">{item.period}</p><h3 className="mt-3 max-w-3xl text-xl font-semibold tracking-[-0.025em] text-blue-dark sm:text-2xl">{item.degree}</h3><p className="mt-3 text-sm text-ink/50">{item.school}</p></div>
-                <p className="flex items-center gap-2 text-sm text-ink/45 sm:justify-end"><MapPin className="size-4 text-blue" aria-hidden="true" />{item.location}</p>
+              <article className="grid gap-5 border-b border-white/15 py-8 transition-[padding,background-color] hover:bg-blue/10 sm:grid-cols-[70px_1fr_180px] sm:gap-8 sm:hover:px-5">
+                <span className="font-mono text-[0.6rem] text-sky">0{index + 1}</span>
+                <div><p className="text-xs font-semibold tracking-[0.1em] text-sky uppercase">{item.period}</p><h3 className="mt-3 max-w-3xl text-xl font-semibold tracking-[-0.025em] text-white sm:text-2xl">{item.degree}</h3><p className="mt-3 text-sm text-white/52">{item.school}</p></div>
+                <p className="flex items-center gap-2 text-sm text-white/48 sm:justify-end"><MapPin className="size-4 text-sky" aria-hidden="true" />{item.location}</p>
               </article>
             </Reveal>
           ))}
@@ -383,15 +383,15 @@ function SectionNavigator({ activeIndex, onNavigate }: SectionNavigatorProps) {
   const nextIndex = activeIndex + 1;
 
   return (
-    <nav aria-label={interfaceLabels.sectionNavigation} className="fixed right-4 bottom-4 left-4 z-40 flex items-center justify-between gap-3 rounded-2xl border border-blue-dark/10 bg-white/92 p-2 shadow-[0_12px_40px_rgba(4,17,38,0.18)] backdrop-blur-xl sm:right-auto sm:left-1/2 sm:-translate-x-1/2">
-      <button type="button" aria-label={interfaceLabels.previousSection} disabled={previousIndex < 0} onClick={() => onNavigate(previousIndex)} className="grid size-11 place-items-center rounded-xl border border-blue-dark/10 text-blue-dark transition-colors hover:border-blue hover:text-blue disabled:pointer-events-none disabled:opacity-25">
+    <nav aria-label={interfaceLabels.sectionNavigation} className="fixed right-4 bottom-4 left-4 z-40 flex items-center justify-between gap-3 rounded-2xl border border-white/12 bg-blue-dark/92 p-2 shadow-[0_12px_40px_rgba(4,17,38,0.32)] backdrop-blur-xl sm:right-auto sm:left-1/2 sm:-translate-x-1/2">
+      <button type="button" aria-label={interfaceLabels.previousSection} disabled={previousIndex < 0} onClick={() => onNavigate(previousIndex)} className="grid size-11 place-items-center rounded-xl border border-white/15 text-white transition-colors hover:border-sky hover:text-sky disabled:pointer-events-none disabled:opacity-25">
         <ArrowLeft className="size-4" aria-hidden="true" />
       </button>
       <div aria-live="polite" className="min-w-28 px-2 text-center">
-        <p className="font-mono text-[0.58rem] tracking-[0.12em] text-blue uppercase">{String(activeIndex + 1).padStart(2, "0")} / {String(navigation.length).padStart(2, "0")}</p>
-        <p className="mt-0.5 text-sm font-semibold text-blue-dark">{navigation[activeIndex].label}</p>
+        <p className="font-mono text-[0.58rem] tracking-[0.12em] text-sky uppercase">{String(activeIndex + 1).padStart(2, "0")} / {String(navigation.length).padStart(2, "0")}</p>
+        <p className="mt-0.5 text-sm font-semibold text-white">{navigation[activeIndex].label}</p>
       </div>
-      <button type="button" aria-label={interfaceLabels.nextSection} disabled={nextIndex >= navigation.length} onClick={() => onNavigate(nextIndex)} className="grid size-11 place-items-center rounded-xl bg-blue-dark text-white transition-colors hover:bg-blue disabled:pointer-events-none disabled:opacity-25">
+      <button type="button" aria-label={interfaceLabels.nextSection} disabled={nextIndex >= navigation.length} onClick={() => onNavigate(nextIndex)} className="grid size-11 place-items-center rounded-xl bg-blue text-white transition-colors hover:bg-[#397cff] disabled:pointer-events-none disabled:opacity-25">
         <ArrowRight className="size-4" aria-hidden="true" />
       </button>
     </nav>
