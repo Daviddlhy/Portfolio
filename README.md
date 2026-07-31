@@ -1,96 +1,209 @@
-# Site personnel de David Delhaye
+# Portfolio de David Delhaye
 
-Ce site présente le parcours de David Delhaye, Data Engineer. Il fonctionne sans installation et sans logiciel particulier.
+Site personnel construit avec Next.js, TypeScript et Tailwind CSS. Toutes les informations professionnelles sont regroupées dans un seul fichier : `src/data/content.ts`.
 
-## 1. Ouvrir le site
+## 1. Installer Node.js
 
-1. Ouvrez le dossier du site.
-2. Double-cliquez sur le fichier `index.html`.
-3. Le site s’ouvre dans votre navigateur internet habituel.
+Node.js est le programme qui permet d’exécuter Next.js sur votre ordinateur. `npm` est l’outil installé avec Node.js pour télécharger les dépendances du projet.
 
-Il n’est pas nécessaire d’installer quoi que ce soit.
+1. Ouvrez [nodejs.org](https://nodejs.org/).
+2. Téléchargez la version **LTS**, c’est-à-dire la version stable recommandée.
+3. Lancez l’installation avec les options proposées par défaut.
+4. Ouvrez un terminal et vérifiez l’installation :
 
-## 2. Modifier un texte
-
-1. Ouvrez `index.html` avec un éditeur de texte, par exemple Visual Studio Code, TextEdit ou le Bloc-notes.
-2. Repérez la zone située entre :
-   - `<!-- DÉBUT DU CONTENU À MODIFIER -->`
-   - `<!-- FIN DU CONTENU À MODIFIER -->`
-3. Repérez ensuite le nom de la section, par exemple `<!-- À PROPOS -->`.
-4. Remplacez uniquement le texte visible entre les balises, sans supprimer les signes `<` et `>`.
-5. Enregistrez le fichier, puis actualisez la page dans le navigateur.
-
-Exemple : pour modifier le titre professionnel, recherchez `Data Engineer` dans `index.html` et remplacez uniquement ces mots aux endroits souhaités.
-
-## 3. Modifier une expérience
-
-Dans `index.html`, repérez `<!-- EXPÉRIENCES -->`. Chaque expérience se trouve dans un bloc qui commence par :
-
-```html
-<article class="experience-card reveal">
+```bash
+node --version
 ```
 
-Dans ce bloc, vous pouvez modifier la période, le lieu, l’entreprise, le poste et les missions. Une mission correspond à une ligne entourée par `<li>` et `</li>`.
+La version affichée doit être au minimum `20.9.0`.
 
-Pour ajouter une expérience, copiez un bloc complet `<article>...</article>`, collez-le dans la timeline, puis remplacez son contenu. Pour en supprimer une, effacez son bloc `<article>...</article>` complet.
+Vérifiez ensuite que npm est disponible :
 
-## 4. Ajouter ou supprimer une compétence
+```bash
+npm --version
+```
 
-Dans `index.html`, repérez `<!-- COMPÉTENCES -->`, puis la catégorie concernée.
+## 2. Installer les dépendances
 
-- Pour ajouter une compétence, ajoutez `<li>Nom de la compétence</li>` dans la liste de la catégorie.
-- Pour supprimer une compétence, effacez toute la ligne `<li>Nom de la compétence</li>`.
+Dans le terminal, placez-vous dans le dossier du projet, puis lancez :
 
-Ne modifiez pas le nom des catégories sauf si votre CV est également mis à jour.
+```bash
+npm install
+```
 
-## 5. Modifier les coordonnées
+Cette commande lit `package.json` et télécharge Next.js, React, Tailwind CSS, Lucide et Motion. Elle crée un dossier `node_modules` qu’il ne faut pas modifier manuellement.
 
-Dans `index.html`, repérez `<!-- CONTACT -->`.
+## 3. Lancer le site localement
 
-- Pour l’e-mail, modifiez à la fois le texte affiché et l’adresse placée après `mailto:`.
-- Pour le téléphone, modifiez le numéro affiché et le numéro placé après `tel:`. Dans la partie `tel:`, ne mettez ni espace ni tiret.
-- Pour LinkedIn, remplacez l’adresse commençant par `https://` et le texte affiché.
-- Pour la localisation, recherchez `Île-de-France` dans `index.html` et remplacez-la aux endroits concernés.
+Dans le dossier du projet, lancez :
 
-## 6. Changer la couleur principale
+```bash
+npm run dev
+```
 
-Ouvrez `style.css`. Tout en haut du fichier, repérez :
+Cette commande démarre le serveur de développement. Ouvrez ensuite [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+
+Les modifications apparaissent automatiquement après l’enregistrement d’un fichier.
+
+## 4. Arrêter le serveur
+
+Revenez dans le terminal où le serveur fonctionne, puis appuyez sur :
+
+```text
+Ctrl + C
+```
+
+Cette combinaison arrête le serveur local. Elle ne supprime aucun fichier.
+
+## 5. Modifier le contenu
+
+Ouvrez uniquement :
+
+```text
+src/data/content.ts
+```
+
+Ce fichier ressemble à un dictionnaire Python ou à un fichier JSON. Les commentaires indiquent clairement où modifier le profil, les expériences, les compétences, les formations et le contact.
+
+Conservez les virgules, les guillemets et les noms de propriétés. Modifiez seulement les valeurs placées entre guillemets.
+
+## 6. Ajouter une expérience
+
+Dans `src/data/content.ts`, repérez le tableau `experiences`.
+
+1. Copiez un objet complet compris entre `{` et `}`.
+2. Collez-le à l’endroit souhaité dans le tableau.
+3. Modifiez `role`, `company`, `location`, `period` et `missions`.
+4. Séparez deux objets par une virgule.
+
+Chaque mission est une ligne entre guillemets dans le tableau `missions`.
+
+## 7. Supprimer une compétence
+
+Dans `src/data/content.ts`, repérez le tableau `skills`, puis la catégorie concernée.
+
+Exemple :
+
+```ts
+items: ["Docker", "Azure DevOps", "Azure Pipelines", "Git"],
+```
+
+Supprimez la compétence avec ses guillemets et la virgule voisine. Ne supprimez pas les crochets `[` et `]`.
+
+## 8. Modifier les coordonnées
+
+Dans `src/data/content.ts`, repérez `profile` et `contactItems`.
+
+- `email` contient l’adresse e-mail.
+- `phone` contient le numéro sans espaces utilisé par le lien téléphonique.
+- `phoneDisplay` contient le numéro affiché.
+- `linkedin` contient l’adresse complète du profil LinkedIn.
+- `location` contient la localisation.
+- `workMode` contient le mode de travail.
+
+Mettez également à jour les valeurs correspondantes dans `contactItems` afin que les liens et les textes affichés restent identiques.
+
+## 9. Changer la couleur principale
+
+Ouvrez `src/app/globals.css`. Au début du fichier, repérez :
 
 ```css
---accent: #0078d4;
+--brand: #0078d4;
 ```
 
-Remplacez `#0078d4` par le code de la couleur souhaitée, puis enregistrez. Un code couleur est une valeur composée d’un `#` suivi de six caractères.
+Remplacez `#0078d4` par le code de la nouvelle couleur. Un code hexadécimal commence par `#` et contient six caractères.
 
-## 7. Remplacer le CV téléchargeable
+## 10. Remplacer le CV
 
-1. Préparez votre nouveau CV au format PDF.
+1. Préparez le nouveau CV au format PDF.
 2. Nommez-le exactement `CV_DELHAYE.pdf`.
-3. Placez-le dans le même dossier que `index.html`.
-4. Acceptez de remplacer l’ancien fichier lorsque votre ordinateur le demande.
+3. Placez-le dans le dossier `public`.
+4. Acceptez le remplacement de l’ancien fichier.
 
-Si vous choisissez un autre nom de fichier, vous devrez aussi remplacer `CV_DELHAYE.pdf` dans `index.html`.
+Le lien `/CV_DELHAYE.pdf` continuera ainsi de fonctionner sans modifier le code.
 
-## 8. Publier gratuitement avec GitHub Pages
+## 11. Vérifier le site avant publication
 
-1. Créez un compte sur [GitHub](https://github.com/) si nécessaire.
-2. Créez un nouveau dépôt, c’est-à-dire un dossier de projet en ligne.
-3. Ajoutez au minimum `index.html`, `style.css`, `script.js` et `CV_DELHAYE.pdf` dans ce dépôt.
-4. Ouvrez **Settings**, puis **Pages** dans la colonne de gauche.
-5. Dans **Build and deployment**, choisissez **Deploy from a branch**.
-6. Sélectionnez votre branche principale, généralement `main`, puis le dossier `/(root)`.
-7. Cliquez sur **Save**.
-8. GitHub affichera l’adresse publique du site après quelques minutes.
+Exécutez d’abord le contrôle du code :
 
-La procédure officielle et à jour est disponible dans la [documentation GitHub Pages](https://docs.github.com/fr/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+```bash
+npm run lint
+```
 
-Attention : le site et le CV deviennent publics sur internet après publication.
+Cette commande signale les erreurs de qualité ou d’accessibilité détectables automatiquement.
 
-## 9. Fichiers à ne pas modifier inutilement
+Vérifiez ensuite les types TypeScript :
 
-- `style.css` contient toute la mise en page. Modifiez seulement la couleur principale si vous n’êtes pas à l’aise avec le code.
-- `script.js` gère le menu mobile et les apparitions au défilement. Il n’est pas nécessaire de le modifier.
-- Ne renommez pas `index.html`, `style.css` ou `script.js`, car ils sont reliés entre eux.
-- Conservez les quatre fichiers principaux dans le même dossier.
+```bash
+npm run typecheck
+```
 
-Toutes les informations personnelles et professionnelles se modifient directement dans `index.html`.
+Enfin, créez la version de production :
+
+```bash
+npm run build
+```
+
+La publication est prête lorsque les trois commandes se terminent sans erreur.
+
+## 12. Déployer sur Vercel
+
+La méthode la plus simple passe par GitHub :
+
+1. Envoyez le projet sur un dépôt GitHub.
+2. Connectez-vous sur [vercel.com](https://vercel.com/) avec GitHub.
+3. Cliquez sur **Add New**, puis **Project**.
+4. Importez le dépôt du portfolio.
+5. Vérifiez que Vercel reconnaît automatiquement **Next.js**.
+6. Conservez les réglages proposés et cliquez sur **Deploy**.
+
+Chaque mise à jour envoyée sur la branche de production déclenchera ensuite un nouveau déploiement. La procédure officielle est détaillée dans la [documentation Vercel](https://vercel.com/docs/git).
+
+## 13. Récupérer de futures modifications avec Git
+
+Vérifiez d’abord la branche active :
+
+```bash
+git branch --show-current
+```
+
+Récupérez ensuite les modifications du dépôt distant :
+
+```bash
+git pull
+```
+
+`git pull` télécharge puis applique les nouveaux changements. Enregistrez ou validez vos modifications locales avant cette commande pour éviter les conflits.
+
+## 14. Revenir en arrière en cas d’erreur
+
+Pour annuler les modifications non enregistrées dans Git sur le fichier de contenu :
+
+```bash
+git restore src/data/content.ts
+```
+
+Attention : cette commande efface les modifications locales non validées de ce fichier.
+
+Pour annuler proprement une modification déjà enregistrée dans Git, affichez l’historique :
+
+```bash
+git log --oneline
+```
+
+Copiez l’identifiant de la modification à annuler, puis utilisez :
+
+```bash
+git revert IDENTIFIANT
+```
+
+`git revert` crée une nouvelle modification qui annule l’ancienne sans réécrire l’historique.
+
+## Fichiers principaux
+
+- `src/data/content.ts` : toutes les informations affichées.
+- `src/app/globals.css` : couleurs et styles globaux.
+- `src/components/` : mise en page visuelle ; à modifier seulement si vous connaissez React.
+- `public/profile.jpeg` : photo de profil.
+- `public/CV_DELHAYE.pdf` : CV téléchargeable.
+- `package.json` : commandes et liste des dépendances.

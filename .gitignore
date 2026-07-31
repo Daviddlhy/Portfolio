@@ -4,10 +4,13 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Dependencies / build output (just in case)
+# Dependencies / Next.js build output
 node_modules/
+.next/
+out/
 dist/
 build/
+.vercel/
 
 # Logs / caches
 npm-debug.log*
@@ -15,6 +18,7 @@ yarn-debug.log*
 yarn-error.log*
 .cache/
 .parcel-cache/
+*.tsbuildinfo
 tmp/
 
 # Python venvs (if ever added)
@@ -26,4 +30,4 @@ venv/
 
 # pdf
 *.pdf
-!CV_DELHAYE.pdf
+!public/CV_DELHAYE.pdf
